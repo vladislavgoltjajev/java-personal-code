@@ -125,7 +125,7 @@ public final class EstonianPersonalCodeGenerator {
 
     private void validatePersonalCode(String personalCode) throws PersonalCodeException {
         if (!ThreadUtils.stackContainsClass(EstonianPersonalCodeValidator.class)) {
-            // Needed to check the overall format when generating a control number for an incomplete personal code.
+            // Needed to check the format when generating a control number for an incomplete personal code.
             if (personalCode != null
                     && !personalCode.isBlank()
                     && personalCode.matches("\\d{10}")) {

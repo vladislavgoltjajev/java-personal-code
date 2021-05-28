@@ -36,7 +36,8 @@ class EstonianPersonalCodeValidatorTest {
             "99999999999",
             "39912310173",
             "39002310001",
-            "50102290005"
+            "50102290005",
+            "501022900051"
     })
     public void validateInvalidPersonalCode(String personalCode) {
         EstonianPersonalCodeValidator validator = new EstonianPersonalCodeValidator();

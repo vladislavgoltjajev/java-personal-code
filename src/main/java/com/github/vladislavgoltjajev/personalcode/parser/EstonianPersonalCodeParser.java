@@ -86,11 +86,8 @@ public final class EstonianPersonalCodeParser {
     }
 
     private void validatePersonalCode(String personalCode) throws PersonalCodeException {
-        if (ThreadUtils.stackContainsClass(EstonianPersonalCodeValidator.class)) {
-            return;
-        }
-
-        if (!new EstonianPersonalCodeValidator().isValid(personalCode)) {
+        if (!ThreadUtils.stackContainsClass(EstonianPersonalCodeValidator.class)
+                && !new EstonianPersonalCodeValidator().isValid(personalCode)) {
             throw new PersonalCodeException("Invalid Estonian personal code");
         }
     }
