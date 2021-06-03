@@ -1,4 +1,4 @@
-package com.github.vladislavgoltjajev.personalcode.parser;
+package com.github.vladislavgoltjajev.personalcode.locale.estonia;
 
 import com.github.vladislavgoltjajev.personalcode.enums.Gender;
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;

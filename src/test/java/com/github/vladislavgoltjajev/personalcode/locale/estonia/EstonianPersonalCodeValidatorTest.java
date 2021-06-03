@@ -1,4 +1,4 @@
-package com.github.vladislavgoltjajev.personalcode.validator;
+package com.github.vladislavgoltjajev.personalcode.locale.estonia;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EmptySource;
