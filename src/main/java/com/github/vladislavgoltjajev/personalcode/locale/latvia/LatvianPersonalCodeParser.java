@@ -27,10 +27,6 @@ public final class LatvianPersonalCodeParser {
         return Period.between(dateOfBirth, LocalDate.now());
     }
 
-    public LocalDate getDateOfBirth(String personalCode) throws PersonalCodeException {
-        return getDateOfBirth(personalCode, true);
-    }
-
     /**
      * Returns the person's date of birth.
      * Digits 1 through 6 of the legacy Latvian personal code show the person's birth date in the format yyddMM.
@@ -40,10 +36,13 @@ public final class LatvianPersonalCodeParser {
      * 2 - years 2000-2099.
      *
      * @param personalCode Legacy Latvian personal code.
-     * @param validate     Whether or not to skip the Latvian personal code validation.
      * @return Date of birth.
-     * @throws PersonalCodeException If the personal code is not a valid legacy Latvian personal code.
+     * @throws PersonalCodeException If the personal code is not a valid legacy Latvian personal code or the date of birth is invalid.
      */
+    public LocalDate getDateOfBirth(String personalCode) throws PersonalCodeException {
+        return getDateOfBirth(personalCode, true);
+    }
+
     LocalDate getDateOfBirth(String personalCode, boolean validate) throws PersonalCodeException {
         if (validate) {
             validatePersonalCode(personalCode);

@@ -14,7 +14,7 @@ public final class EstonianPersonalCodeParser {
      *
      * @param personalCode Estonian personal code.
      * @return Period object containing the person's age.
-     * @throws PersonalCodeException If the personal code is invalid or the date of birth is in the future.
+     * @throws PersonalCodeException If the Estonian personal code is invalid or the date of birth is in the future.
      */
     public Period getAge(String personalCode) throws PersonalCodeException {
         validatePersonalCode(personalCode);
@@ -49,10 +49,6 @@ public final class EstonianPersonalCodeParser {
         }
     }
 
-    public LocalDate getDateOfBirth(String personalCode) throws PersonalCodeException {
-        return getDateOfBirth(personalCode, true);
-    }
-
     /**
      * Returns the person's date of birth.
      * Digits 2 through 7 of the Estonian personal code show the person's birth date in the format yyddMM.
@@ -62,10 +58,13 @@ public final class EstonianPersonalCodeParser {
      * 5, 6 - years 2000-2099.
      *
      * @param personalCode Estonian personal code.
-     * @param validate     Whether or not to skip the Estonian personal code validation.
      * @return Date of birth.
-     * @throws PersonalCodeException If the Estonian personal code or the date of birth is invalid.
+     * @throws PersonalCodeException If the Estonian personal code or the date of birth are invalid.
      */
+    public LocalDate getDateOfBirth(String personalCode) throws PersonalCodeException {
+        return getDateOfBirth(personalCode, true);
+    }
+
     LocalDate getDateOfBirth(String personalCode, boolean validate) throws PersonalCodeException {
         if (validate) {
             validatePersonalCode(personalCode);

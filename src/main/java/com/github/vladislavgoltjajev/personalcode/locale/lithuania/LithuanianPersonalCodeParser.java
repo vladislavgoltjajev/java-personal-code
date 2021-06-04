@@ -14,7 +14,7 @@ public final class LithuanianPersonalCodeParser {
      *
      * @param personalCode Lithuanian personal code.
      * @return Period object containing the person's age.
-     * @throws PersonalCodeException If the personal code is invalid or the date of birth is in the future.
+     * @throws PersonalCodeException If the Lithuanian personal code is invalid or the date of birth is in the future.
      */
     public Period getAge(String personalCode) throws PersonalCodeException {
         validatePersonalCode(personalCode);
@@ -49,10 +49,6 @@ public final class LithuanianPersonalCodeParser {
         }
     }
 
-    public LocalDate getDateOfBirth(String personalCode) throws PersonalCodeException {
-        return getDateOfBirth(personalCode, true);
-    }
-
     /**
      * Returns the person's date of birth.
      * Digits 2 through 7 of the Lithuanian personal code show the person's birth date in the format yyddMM.
@@ -62,10 +58,13 @@ public final class LithuanianPersonalCodeParser {
      * 5, 6 - years 2000-2099.
      *
      * @param personalCode Lithuanian personal code.
-     * @param validate     Whether or not to skip the Lithuanian personal code validation.
      * @return Date of birth.
-     * @throws PersonalCodeException If the Lithuanian personal code or the date of birth is invalid.
+     * @throws PersonalCodeException If the Lithuanian personal code or the date of birth are invalid.
      */
+    public LocalDate getDateOfBirth(String personalCode) throws PersonalCodeException {
+        return getDateOfBirth(personalCode, true);
+    }
+
     LocalDate getDateOfBirth(String personalCode, boolean validate) throws PersonalCodeException {
         if (validate) {
             validatePersonalCode(personalCode);
