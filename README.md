@@ -43,10 +43,10 @@ public class Test {
 ```
 
 ## API
-* [Estonia](#estonia) :estonia:
-* [Lithuania](#lithuania) :lithuania:
+* [Estonia](#estonia)
+* [Lithuania](#lithuania)
 
-### <a name="estonia"><a/> Estonia :estonia:
+### Estonia
 #### EstonianPersonalCodeValidator
 <table class="table1">
     <tr>
@@ -69,7 +69,7 @@ public class Test {
     </tr>
 </table>
 
-### <a name="lithuania"><a/> Lithuania :lithuania:
+### Lithuania
 #### LithuanianPersonalCodeValidator
 <table class="table1">
     <tr>
