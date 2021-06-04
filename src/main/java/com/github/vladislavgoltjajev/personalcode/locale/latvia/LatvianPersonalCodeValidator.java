@@ -5,7 +5,7 @@ import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeExceptio
 public final class LatvianPersonalCodeValidator {
 
     /**
-     * Checks if the Latvian personal code is valid.
+     * Checks if the Latvian personal code (both legacy and updated) is valid.
      *
      * @param personalCode Latvian personal code.
      * @return Whether or not the Latvian personal code is valid.

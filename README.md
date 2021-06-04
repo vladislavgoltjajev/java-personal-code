@@ -81,7 +81,7 @@ public class Test {
     <tr>
         <td>isValid(String personalCode)</td>
         <td>boolean</td>
-        <td>Checks if the Latvian personal code is valid.</td>
+        <td>Checks if the Latvian personal code (both legacy and updated) is valid.</td>
     </tr>
     <tr>
         <td>isValidUpdatedPersonalCode(String personalCode)</td>
