@@ -71,7 +71,7 @@ public class Test {
 
 ### Lithuania
 #### LithuanianPersonalCodeValidator
-<table class="table1">
+<table>
     <tr>
         <th>Method</th>
         <th>Return type</th>

@@ -9,25 +9,6 @@ import java.time.format.DateTimeParseException;
 public final class LatvianPersonalCodeParser {
 
     /**
-     * Returns a Period object containing the person's age.
-     *
-     * @param personalCode Legacy Latvian personal code.
-     * @return Period object containing the person's age.
-     * @throws PersonalCodeException If the personal code is not a valid legacy Latvian personal code or the date of birth is after the
-     *                               introduction of the updated Latvian personal code format.
-     */
-    public Period getAge(String personalCode) throws PersonalCodeException {
-        validatePersonalCode(personalCode);
-        LocalDate dateOfBirth = getDateOfBirth(personalCode);
-
-        if (dateOfBirth.isAfter(LocalDate.now())) {
-            throw new PersonalCodeException("Date of birth is after the introduction of the updated Latvian personal code format");
-        }
-
-        return Period.between(dateOfBirth, LocalDate.now());
-    }
-
-    /**
      * Returns the person's date of birth.
      * Digits 1 through 6 of the legacy Latvian personal code show the person's birth date in the format yyddMM.
      * Using the century identifier (seventh digit), it is possible to acquire the person's full year of birth.
@@ -68,6 +49,25 @@ public final class LatvianPersonalCodeParser {
         } catch (DateTimeParseException e) {
             throw new PersonalCodeException(e.getMessage());
         }
+    }
+
+    /**
+     * Returns a Period object containing the person's age.
+     *
+     * @param personalCode Legacy Latvian personal code.
+     * @return Period object containing the person's age.
+     * @throws PersonalCodeException If the personal code is not a valid legacy Latvian personal code or the date of birth is after the
+     *                               introduction of the updated Latvian personal code format.
+     */
+    public Period getAge(String personalCode) throws PersonalCodeException {
+        validatePersonalCode(personalCode);
+        LocalDate dateOfBirth = getDateOfBirth(personalCode);
+
+        if (dateOfBirth.isAfter(LocalDate.now())) {
+            throw new PersonalCodeException("Date of birth is after the introduction of the updated Latvian personal code format");
+        }
+
+        return Period.between(dateOfBirth, LocalDate.now());
     }
 
     /**

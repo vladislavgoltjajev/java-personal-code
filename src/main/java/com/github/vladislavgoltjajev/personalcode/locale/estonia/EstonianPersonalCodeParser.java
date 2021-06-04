@@ -10,24 +10,6 @@ import java.time.format.DateTimeParseException;
 public final class EstonianPersonalCodeParser {
 
     /**
-     * Returns a Period object containing the person's age.
-     *
-     * @param personalCode Estonian personal code.
-     * @return Period object containing the person's age.
-     * @throws PersonalCodeException If the Estonian personal code is invalid or the date of birth is in the future.
-     */
-    public Period getAge(String personalCode) throws PersonalCodeException {
-        validatePersonalCode(personalCode);
-        LocalDate dateOfBirth = getDateOfBirth(personalCode);
-
-        if (dateOfBirth.isAfter(LocalDate.now())) {
-            throw new PersonalCodeException("Date of birth is in the future");
-        }
-
-        return Period.between(dateOfBirth, LocalDate.now());
-    }
-
-    /**
      * Returns the person's gender.
      * The gender is defined by the first digit of the personal code.
      * 1, 3, 5 - male.
@@ -90,6 +72,24 @@ public final class EstonianPersonalCodeParser {
         } catch (DateTimeParseException e) {
             throw new PersonalCodeException(e.getMessage());
         }
+    }
+
+    /**
+     * Returns a Period object containing the person's age.
+     *
+     * @param personalCode Estonian personal code.
+     * @return Period object containing the person's age.
+     * @throws PersonalCodeException If the Estonian personal code is invalid or the date of birth is in the future.
+     */
+    public Period getAge(String personalCode) throws PersonalCodeException {
+        validatePersonalCode(personalCode);
+        LocalDate dateOfBirth = getDateOfBirth(personalCode);
+
+        if (dateOfBirth.isAfter(LocalDate.now())) {
+            throw new PersonalCodeException("Date of birth is in the future");
+        }
+
+        return Period.between(dateOfBirth, LocalDate.now());
     }
 
     /**
