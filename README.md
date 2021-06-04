@@ -44,6 +44,7 @@ public class Test {
 
 ## API
 * [Estonia](#estonia)
+* [Latvia](#latvia)
 * [Lithuania](#lithuania)
 
 ### Estonia
@@ -57,14 +58,47 @@ public class Test {
     <tr>
         <td>isValid(String personalCode)</td>
         <td>boolean</td>
-        <td>Checks if the Estonian personal code conforms to the correct format and contains valid data.</td>
+        <td>Checks if the Estonian personal code is valid.</td>
     </tr>
     <tr>
         <td>isFormatValid(String personalCode)</td>
         <td>boolean</td>
         <td>
             Checks if the Estonian personal code conforms to the correct format.<br/>
-            Does not check the validity of the data contained in the personal code.
+            Does not check the personal code's integrity and the validity of the embedded data.
+        </td>
+    </tr>
+</table>
+
+### Latvia
+#### LatvianPersonalCodeValidator
+<table>
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>isValid(String personalCode)</td>
+        <td>boolean</td>
+        <td>Checks if the Latvian personal code is valid.</td>
+    </tr>
+    <tr>
+        <td>isValidUpdatedPersonalCode(String personalCode)</td>
+        <td>boolean</td>
+        <td>Checks if the updated Latvian personal code is valid.</td>
+    </tr>
+    <tr>
+        <td>isValidLegacyPersonalCode(String personalCode)</td>
+        <td>boolean</td>
+        <td>Checks if the legacy Latvian personal code is valid.</td>
+    </tr>
+    <tr>
+        <td>isLegacyFormatValid(String personalCode)</td>
+        <td>boolean</td>
+        <td>
+            Checks if the legacy Latvian personal code conforms to the correct format.<br/>
+            Does not check the personal code's integrity and the validity of the embedded data.
         </td>
     </tr>
 </table>
@@ -80,14 +114,14 @@ public class Test {
     <tr>
         <td>isValid(String personalCode)</td>
         <td>boolean</td>
-        <td>Checks if the Lithuanian personal code conforms to the correct format and contains valid data.</td>
+        <td>Checks if the Lithuanian personal code is valid.</td>
     </tr>
     <tr>
         <td>isFormatValid(String personalCode)</td>
         <td>boolean</td>
         <td>
             Checks if the Lithuanian personal code conforms to the correct format.<br/>
-            Does not check the validity of the data contained in the personal code.
+            Does not check the personal code's integrity and the validity of the embedded data.
         </td>
     </tr>
 </table>

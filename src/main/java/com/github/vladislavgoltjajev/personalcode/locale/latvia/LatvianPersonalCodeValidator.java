@@ -5,20 +5,20 @@ import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeExceptio
 public final class LatvianPersonalCodeValidator {
 
     /**
-     * Checks if the personal code conforms to the correct updated or legacy format and contains valid data.
+     * Checks if the Latvian personal code is valid.
      *
      * @param personalCode Latvian personal code.
-     * @return Whether or not the Latvian personal code conforms to the correct format and contains valid data.
+     * @return Whether or not the Latvian personal code is valid.
      */
     public boolean isValid(String personalCode) {
         return isValidUpdatedPersonalCode(personalCode) || isValidLegacyPersonalCode(personalCode);
     }
 
     /**
-     * Checks if the personal code conforms to the correct updated format.
+     * Checks if the updated Latvian personal code is valid.
      *
-     * @param personalCode Latvian personal code.
-     * @return Whether or not the Latvian personal code conforms to the correct updated format.
+     * @param personalCode Updated Latvian personal code.
+     * @return Whether or not the updated Latvian personal code is valid.
      */
     public boolean isValidUpdatedPersonalCode(String personalCode) {
         return personalCode != null
@@ -27,10 +27,10 @@ public final class LatvianPersonalCodeValidator {
     }
 
     /**
-     * Checks if the legacy Latvian personal code conforms to the correct format and contains valid data.
+     * Checks if the legacy Latvian personal code is valid.
      *
      * @param personalCode Legacy Latvian personal code.
-     * @return Whether or not the legacy Latvian personal code conforms to the correct format and contains valid data.
+     * @return Whether or not the legacy Latvian personal code is valid.
      */
     public boolean isValidLegacyPersonalCode(String personalCode) {
         if (!isLegacyFormatValid(personalCode)) {
@@ -49,7 +49,7 @@ public final class LatvianPersonalCodeValidator {
 
     /**
      * Checks if the legacy Latvian personal code conforms to the correct format.
-     * Does not check the validity of the data contained in the personal code.
+     * Does not check the personal code's integrity and the validity of the embedded data.
      *
      * @param personalCode Legacy Latvian personal code.
      * @return Whether or not the legacy Latvian personal code conforms to the correct format.

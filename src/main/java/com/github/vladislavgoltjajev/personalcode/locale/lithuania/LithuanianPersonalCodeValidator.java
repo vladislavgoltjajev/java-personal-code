@@ -5,10 +5,10 @@ import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeExceptio
 public final class LithuanianPersonalCodeValidator {
 
     /**
-     * Checks if the Lithuanian personal code conforms to the correct format and contains valid data.
+     * Checks if the Lithuanian personal code is valid.
      *
      * @param personalCode Lithuanian personal code.
-     * @return Whether or not the Lithuanian personal code conforms to the correct format and contains valid data.
+     * @return Whether or not the Lithuanian personal code is valid.
      */
     public boolean isValid(String personalCode) {
         if (!isFormatValid(personalCode)) {
@@ -27,7 +27,7 @@ public final class LithuanianPersonalCodeValidator {
 
     /**
      * Checks if the Lithuanian personal code conforms to the correct format.
-     * Does not check the validity of the data contained in the personal code.
+     * Does not check the personal code's integrity and the validity of the embedded data.
      *
      * @param personalCode Lithuanian personal code.
      * @return Whether or not the Lithuanian personal code conforms to the correct format.
