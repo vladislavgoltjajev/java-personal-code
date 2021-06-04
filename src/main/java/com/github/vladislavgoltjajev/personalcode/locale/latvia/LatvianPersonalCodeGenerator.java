@@ -41,6 +41,18 @@ public final class LatvianPersonalCodeGenerator {
     }
 
     /**
+     * Generates a legacy Latvian personal code using the given gender and date of birth.
+     * The birth order number is assigned randomly.
+     *
+     * @param dateOfBirth Person's date of birth.
+     * @return Legacy Latvian personal code.
+     * @throws PersonalCodeException If the date of birth falls outside the allowed range (01.01.1800-30.06.2017).
+     */
+    public String generateLegacyPersonalCode(LocalDate dateOfBirth) throws PersonalCodeException {
+        return generateLegacyPersonalCode(dateOfBirth, LatvianPersonalCodeUtils.getRandomBirthOrderNumber());
+    }
+
+    /**
      * Generates a legacy Latvian personal code using the given gender, date of birth and birth order number.
      *
      * @param dateOfBirth      Person's date of birth.

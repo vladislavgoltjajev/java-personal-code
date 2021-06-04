@@ -12,7 +12,7 @@ public final class LatvianPersonalCodeParser {
      *
      * @param personalCode Legacy Latvian personal code.
      * @return Period object containing the person's age.
-     * @throws PersonalCodeException If the legacy Latvian personal code is invalid or the date of birth is after the
+     * @throws PersonalCodeException If the personal code is not a valid legacy Latvian personal code or the date of birth is after the
      *                               introduction of the updated Latvian personal code format.
      */
     public Period getAge(String personalCode) throws PersonalCodeException {
@@ -41,7 +41,7 @@ public final class LatvianPersonalCodeParser {
      * @param personalCode Legacy Latvian personal code.
      * @param validate     Whether or not to skip the Latvian personal code validation.
      * @return Date of birth.
-     * @throws PersonalCodeException If the Latvian personal code or the date of birth is invalid.
+     * @throws PersonalCodeException If the personal code is not a valid legacy Latvian personal code.
      */
     LocalDate getDateOfBirth(String personalCode, boolean validate) throws PersonalCodeException {
         if (validate) {
@@ -65,6 +65,13 @@ public final class LatvianPersonalCodeParser {
         return LocalDate.parse(dateString, LatvianPersonalCodeConstants.LEGACY_DATE_FORMATTER);
     }
 
+    /**
+     * Returns the birth order number (digits 8-10) in the legacy Latvian personal code.
+     *
+     * @param personalCode Legacy Latvian personal code.
+     * @return Birth order number.
+     * @throws PersonalCodeException If the personal code is not a valid legacy Latvian personal code.
+     */
     public int getBirthOrderNumber(String personalCode) throws PersonalCodeException {
         validatePersonalCode(personalCode);
         return Integer.parseInt(personalCode.substring(8, 9));
@@ -81,7 +88,11 @@ public final class LatvianPersonalCodeParser {
     }
 
     private void validatePersonalCode(String personalCode) throws PersonalCodeException {
-        if (!new LatvianPersonalCodeValidator().isValid(personalCode)) {
+        LatvianPersonalCodeValidator validator = new LatvianPersonalCodeValidator();
+
+        if (validator.isValidUpdatedPersonalCode(personalCode)) {
+            throw new PersonalCodeException("Cannot extract data from updated Latvian personal codes");
+        } else if (!validator.isValidLegacyPersonalCode(personalCode)) {
             throw new PersonalCodeException("Invalid legacy Latvian personal code");
         }
     }

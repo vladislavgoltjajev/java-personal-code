@@ -23,7 +23,7 @@ public final class DateUtils {
      */
     public static LocalDate getRandomDate(LocalDate startDate, LocalDate endDate) {
         long leftLimit = 0L;
-        long rightLimit = ChronoUnit.DAYS.between(startDate, endDate) + 1;
+        long rightLimit = ChronoUnit.DAYS.between(startDate, endDate);
         long generatedLong = leftLimit + (long) (Math.random() * (rightLimit - leftLimit));
         return startDate.plusDays(generatedLong);
     }
