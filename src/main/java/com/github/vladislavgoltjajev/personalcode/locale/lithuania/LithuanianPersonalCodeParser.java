@@ -5,6 +5,7 @@ import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeExceptio
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeParseException;
 
 public final class LithuanianPersonalCodeParser {
 
@@ -85,7 +86,11 @@ public final class LithuanianPersonalCodeParser {
                 dateString = "20" + dateString;
         }
 
-        return LocalDate.parse(dateString, LithuanianPersonalCodeConstants.DATE_FORMATTER);
+        try {
+            return LocalDate.parse(dateString, LithuanianPersonalCodeConstants.DATE_FORMATTER);
+        } catch (DateTimeParseException e) {
+            throw new PersonalCodeException(e.getMessage());
+        }
     }
 
     /**

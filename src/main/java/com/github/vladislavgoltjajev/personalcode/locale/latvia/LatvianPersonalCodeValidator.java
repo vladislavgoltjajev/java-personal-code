@@ -1,5 +1,7 @@
 package com.github.vladislavgoltjajev.personalcode.locale.latvia;
 
+import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
+
 public final class LatvianPersonalCodeValidator {
 
     /**
@@ -24,6 +26,12 @@ public final class LatvianPersonalCodeValidator {
                 && personalCode.matches(LatvianPersonalCodeConstants.LATVIAN_PERSONAL_CODE_REGEX);
     }
 
+    /**
+     * Checks if the legacy Latvian personal code conforms to the correct format and contains valid data.
+     *
+     * @param personalCode Legacy Latvian personal code.
+     * @return Whether or not the legacy Latvian personal code conforms to the correct format and contains valid data.
+     */
     public boolean isValidLegacyPersonalCode(String personalCode) {
         if (!isLegacyFormatValid(personalCode)) {
             return false;
@@ -31,11 +39,12 @@ public final class LatvianPersonalCodeValidator {
 
         try {
             new LatvianPersonalCodeParser().getDateOfBirth(personalCode, false);
-            int checksum = Character.getNumericValue(personalCode.charAt(personalCode.length() - 1));
-            return checksum == LatvianPersonalCodeUtils.calculateChecksum(personalCode);
-        } catch (Exception e) {
+        } catch (PersonalCodeException e) {
             return false;
         }
+
+        int checksum = Character.getNumericValue(personalCode.charAt(personalCode.length() - 1));
+        return checksum == LatvianPersonalCodeUtils.calculateChecksum(personalCode);
     }
 
     /**

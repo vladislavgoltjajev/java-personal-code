@@ -1,5 +1,7 @@
 package com.github.vladislavgoltjajev.personalcode.locale.lithuania;
 
+import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
+
 public final class LithuanianPersonalCodeValidator {
 
     /**
@@ -15,11 +17,12 @@ public final class LithuanianPersonalCodeValidator {
 
         try {
             new LithuanianPersonalCodeParser().getDateOfBirth(personalCode, false);
-            int checksum = Character.getNumericValue(personalCode.charAt(personalCode.length() - 1));
-            return checksum == LithuanianPersonalCodeUtils.calculateChecksum(personalCode);
-        } catch (Exception e) {
+        } catch (PersonalCodeException e) {
             return false;
         }
+
+        int checksum = Character.getNumericValue(personalCode.charAt(personalCode.length() - 1));
+        return checksum == LithuanianPersonalCodeUtils.calculateChecksum(personalCode);
     }
 
     /**

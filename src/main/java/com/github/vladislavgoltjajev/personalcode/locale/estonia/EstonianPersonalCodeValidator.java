@@ -1,5 +1,7 @@
 package com.github.vladislavgoltjajev.personalcode.locale.estonia;
 
+import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
+
 public final class EstonianPersonalCodeValidator {
 
     /**
@@ -15,11 +17,12 @@ public final class EstonianPersonalCodeValidator {
 
         try {
             new EstonianPersonalCodeParser().getDateOfBirth(personalCode, false);
-            int checksum = Character.getNumericValue(personalCode.charAt(personalCode.length() - 1));
-            return checksum == EstonianPersonalCodeUtils.calculateChecksum(personalCode);
-        } catch (Exception e) {
+        } catch (PersonalCodeException e) {
             return false;
         }
+
+        int checksum = Character.getNumericValue(personalCode.charAt(personalCode.length() - 1));
+        return checksum == EstonianPersonalCodeUtils.calculateChecksum(personalCode);
     }
 
     /**

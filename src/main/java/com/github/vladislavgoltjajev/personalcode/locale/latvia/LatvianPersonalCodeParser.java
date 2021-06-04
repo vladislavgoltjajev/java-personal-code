@@ -4,6 +4,7 @@ import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeExceptio
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeParseException;
 
 public final class LatvianPersonalCodeParser {
 
@@ -62,7 +63,12 @@ public final class LatvianPersonalCodeParser {
         }
 
         String dateString = personalCode.substring(0, 4) + yearStart + personalCode.substring(4, 6);
-        return LocalDate.parse(dateString, LatvianPersonalCodeConstants.LEGACY_DATE_FORMATTER);
+
+        try {
+            return LocalDate.parse(dateString, LatvianPersonalCodeConstants.LEGACY_DATE_FORMATTER);
+        } catch (DateTimeParseException e) {
+            throw new PersonalCodeException(e.getMessage());
+        }
     }
 
     /**
