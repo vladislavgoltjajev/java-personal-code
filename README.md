@@ -41,3 +41,53 @@ public class Test {
     }
 }
 ```
+
+## API
+* [Estonia](#estonia)
+* [Lithuania](#lithuania)
+
+### Estonia
+#### EstonianPersonalCodeValidator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>isValid(String personalCode)</td>
+        <td>boolean</td>
+        <td>Checks if the Estonian personal code conforms to the correct format and contains valid data.</td>
+    </tr>
+    <tr>
+        <td>isFormatValid(String personalCode)</td>
+        <td>boolean</td>
+        <td>
+            Checks if the Estonian personal code conforms to the correct format.<br/>
+            Does not check the validity of the data contained in the personal code.
+        </td>
+    </tr>
+</table>
+
+### Lithuania
+#### LithuanianPersonalCodeValidator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>isValid(String personalCode)</td>
+        <td>boolean</td>
+        <td>Checks if the Lithuanian personal code conforms to the correct format and contains valid data.</td>
+    </tr>
+    <tr>
+        <td>isFormatValid(String personalCode)</td>
+        <td>boolean</td>
+        <td>
+            Checks if the Lithuanian personal code conforms to the correct format.<br/>
+            Does not check the validity of the data contained in the personal code.
+        </td>
+    </tr>
+</table>
