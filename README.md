@@ -20,3 +20,24 @@ dependencies {
     <version>1.0</version>
 </dependency>
 ```
+
+## Usage
+```java
+public class Test {
+
+    /**
+     * Example operations using an Estonian personal code.
+     */
+    public static void main(String[] args) {
+        EstonianPersonalCodeGenerator generator = new EstonianPersonalCodeGenerator();
+        String personalCode = generator.generateRandomPersonlCode(); // 37209030023
+        EstonianPersonalCodeValidator validator = new EstonianPersonalCodeValidator();
+        boolean isFormatValid = validator.isFormatValid(personalCode); // true
+        boolean isValid = validator.isValid(personalCode); // true
+        EstonianPersonalCodeParser parser = new EstonianPersonalCodeParser();
+        LocalDate dateOfBirth = parser.getDateOfBirth(personalCode); // 03.09.1972
+        Gender gender = parser.getGender(personalCode); // MALE
+        int birthOrderNumber = parser.getBirthOrderNumber(personalCode); // 2
+    }
+}
+```

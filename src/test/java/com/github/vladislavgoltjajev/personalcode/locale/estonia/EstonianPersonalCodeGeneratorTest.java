@@ -17,6 +17,7 @@ class EstonianPersonalCodeGeneratorTest {
 
         for (int i = 0; i < 10000; i++) {
             String personalCode = generator.generateRandomPersonalCode();
+            System.out.println(personalCode);
             assertThat(validator.isValid(personalCode)).isTrue();
         }
     }
