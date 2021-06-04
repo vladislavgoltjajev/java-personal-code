@@ -4,21 +4,29 @@ import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeExceptio
 import com.github.vladislavgoltjajev.personalcode.utility.DateUtils;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 public final class LatvianPersonalCodeGenerator {
 
     /**
      * Generates a random Latvian personal code.
+     * May contain a dash between the 6th and 7th digit.
      *
      * @return Random Latvian personal code.
      */
     public String generateRandomPersonalCode() {
-        String personalCodeWithoutChecksum = "32" + LatvianPersonalCodeUtils.getRandomPersonalIdentifier();
-        return personalCodeWithoutChecksum + LatvianPersonalCodeUtils.calculateChecksum(personalCodeWithoutChecksum);
+        int identifier = new Random().nextInt(1000000000);
+        String personalCode = "32" + String.format("%09d", identifier);
+
+        if (Math.random() > 0.5) {
+            personalCode = personalCode.substring(0, 6) + "-" + personalCode.substring(6);
+        }
+
+        return personalCode;
     }
 
     /**
-     * Generates a random legacy format Latvian personal code.
+     * Generates a random legacy Latvian personal code.
      *
      * @return Random legacy Latvian personal code.
      */
@@ -45,15 +53,16 @@ public final class LatvianPersonalCodeGenerator {
                 || dateOfBirth.isBefore(LatvianPersonalCodeConstants.MINIMUM_LEGACY_DATE)
                 || dateOfBirth.isAfter(LatvianPersonalCodeConstants.MAXIMUM_LEGACY_DATE)) {
             throw new PersonalCodeException(String.format("Date of birth must be between %s and %s",
-                    DateUtils.getFormattedDate(LatvianPersonalCodeConstants.MINIMUM_LEGACY_DATE),
-                    DateUtils.getFormattedDate(LatvianPersonalCodeConstants.MAXIMUM_LEGACY_DATE)));
+                    DateUtils.getReadableFormatDate(LatvianPersonalCodeConstants.MINIMUM_LEGACY_DATE),
+                    DateUtils.getReadableFormatDate(LatvianPersonalCodeConstants.MAXIMUM_LEGACY_DATE)));
         }
 
         if (birthOrderNumber < 0 || birthOrderNumber > 999) {
             throw new PersonalCodeException("Birth order number must be between 0 and 999");
         }
 
-        String personalCodeWithoutChecksum = dateOfBirth.format(LatvianPersonalCodeConstants.LEGACY_DATE_FORMATTER).substring(0, 6)
+        String dateString = dateOfBirth.format(LatvianPersonalCodeConstants.LEGACY_DATE_FORMATTER);
+        String personalCodeWithoutChecksum = dateString.substring(0, 4) + dateString.substring(6)
                 + "-"
                 + LatvianPersonalCodeUtils.calculateCenturyIdentifier(dateOfBirth)
                 + String.format("%03d", birthOrderNumber);

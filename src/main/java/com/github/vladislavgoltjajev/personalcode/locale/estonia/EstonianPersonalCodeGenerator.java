@@ -52,8 +52,8 @@ public final class EstonianPersonalCodeGenerator {
                 || dateOfBirth.isBefore(EstonianPersonalCodeConstants.MINIMUM_DATE)
                 || dateOfBirth.isAfter(EstonianPersonalCodeConstants.MAXIMUM_DATE)) {
             throw new PersonalCodeException(String.format("Date of birth must be between %s and %s",
-                    DateUtils.getFormattedDate(EstonianPersonalCodeConstants.MINIMUM_DATE),
-                    DateUtils.getFormattedDate(EstonianPersonalCodeConstants.MAXIMUM_DATE)));
+                    DateUtils.getReadableFormatDate(EstonianPersonalCodeConstants.MINIMUM_DATE),
+                    DateUtils.getReadableFormatDate(EstonianPersonalCodeConstants.MAXIMUM_DATE)));
         }
 
         if (birthOrderNumber < 0 || birthOrderNumber > 999) {

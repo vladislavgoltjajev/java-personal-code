@@ -52,8 +52,8 @@ public final class LithuanianPersonalCodeGenerator {
                 || dateOfBirth.isBefore(LithuanianPersonalCodeConstants.MINIMUM_DATE)
                 || dateOfBirth.isAfter(LithuanianPersonalCodeConstants.MAXIMUM_DATE)) {
             throw new PersonalCodeException(String.format("Date of birth must be between %s and %s",
-                    DateUtils.getFormattedDate(LithuanianPersonalCodeConstants.MINIMUM_DATE),
-                    DateUtils.getFormattedDate(LithuanianPersonalCodeConstants.MAXIMUM_DATE)));
+                    DateUtils.getReadableFormatDate(LithuanianPersonalCodeConstants.MINIMUM_DATE),
+                    DateUtils.getReadableFormatDate(LithuanianPersonalCodeConstants.MAXIMUM_DATE)));
         }
 
         if (birthOrderNumber < 0 || birthOrderNumber > 999) {

@@ -1,9 +1,9 @@
 package com.github.vladislavgoltjajev.personalcode.locale.lithuania;
 
 import com.github.vladislavgoltjajev.personalcode.enums.Gender;
+import com.github.vladislavgoltjajev.personalcode.utility.DateUtils;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.Random;
 import java.util.stream.Stream;
 
@@ -92,8 +92,8 @@ final class LithuanianPersonalCodeUtils {
      * @return Random date of birth.
      */
     static LocalDate getRandomDateOfBirth() {
-        int daysBetween = (int) ChronoUnit.DAYS.between(LithuanianPersonalCodeConstants.MINIMUM_DATE, LithuanianPersonalCodeConstants.MAXIMUM_DATE);
-        return LithuanianPersonalCodeConstants.MINIMUM_DATE.plusDays(new Random().nextInt(daysBetween + 1));
+        return DateUtils.getRandomDate(LithuanianPersonalCodeConstants.MINIMUM_DATE, LithuanianPersonalCodeConstants.MAXIMUM_DATE);
+
     }
 
     /**

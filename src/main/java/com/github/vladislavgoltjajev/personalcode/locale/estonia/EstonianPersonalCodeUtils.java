@@ -1,9 +1,9 @@
 package com.github.vladislavgoltjajev.personalcode.locale.estonia;
 
 import com.github.vladislavgoltjajev.personalcode.enums.Gender;
+import com.github.vladislavgoltjajev.personalcode.utility.DateUtils;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.Random;
 import java.util.stream.Stream;
 
@@ -92,8 +92,7 @@ final class EstonianPersonalCodeUtils {
      * @return Random date of birth.
      */
     static LocalDate getRandomDateOfBirth() {
-        int daysBetween = (int) ChronoUnit.DAYS.between(EstonianPersonalCodeConstants.MINIMUM_DATE, EstonianPersonalCodeConstants.MAXIMUM_DATE);
-        return EstonianPersonalCodeConstants.MINIMUM_DATE.plusDays(new Random().nextInt(daysBetween + 1));
+        return DateUtils.getRandomDate(EstonianPersonalCodeConstants.MINIMUM_DATE, EstonianPersonalCodeConstants.MAXIMUM_DATE);
     }
 
     /**
