@@ -15,9 +15,9 @@ final class LatvianPersonalCodeUtils {
      * summing up each result, subtracting the sum from 1101 and reducing the result modulo 11 and 10.
      *
      * @param personalCode Latvian personal code.
-     * @return Calculated checksum.
+     * @return Checksum.
      */
-    static int calculateChecksum(String personalCode) {
+    static int getChecksum(String personalCode) {
         int[] numberArray = Stream.of(personalCode
                 .replace("-", "")
                 .substring(0, 10)
@@ -43,7 +43,7 @@ final class LatvianPersonalCodeUtils {
      * @param dateOfBirth Person's date of birth.
      * @return Gender identifier.
      */
-    static int calculateCenturyIdentifier(LocalDate dateOfBirth) {
+    static int getCenturyIdentifier(LocalDate dateOfBirth) {
         int birthYear = dateOfBirth.getYear();
 
         if (birthYear >= 1800 && birthYear <= 1899) {

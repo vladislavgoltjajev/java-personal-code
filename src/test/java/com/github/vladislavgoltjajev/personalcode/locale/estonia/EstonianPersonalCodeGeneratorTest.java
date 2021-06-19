@@ -2,6 +2,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.estonia;
 
 import com.github.vladislavgoltjajev.personalcode.enums.Gender;
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -10,11 +11,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class EstonianPersonalCodeGeneratorTest {
 
+    EstonianPersonalCodeGenerator generator;
+    EstonianPersonalCodeValidator validator;
+
+    @BeforeEach
+    void setUp() {
+        generator = new EstonianPersonalCodeGenerator();
+        validator = new EstonianPersonalCodeValidator();
+    }
+
     @Test
     void generateRandomPersonalCode() {
-        EstonianPersonalCodeGenerator generator = new EstonianPersonalCodeGenerator();
-        EstonianPersonalCodeValidator validator = new EstonianPersonalCodeValidator();
-
         for (int i = 0; i < 10000; i++) {
             String personalCode = generator.generateRandomPersonalCode();
             assertThat(validator.isValid(personalCode)).isTrue();
@@ -23,9 +30,6 @@ class EstonianPersonalCodeGeneratorTest {
 
     @Test
     void generatePersonalCode() throws PersonalCodeException {
-        EstonianPersonalCodeGenerator generator = new EstonianPersonalCodeGenerator();
-        EstonianPersonalCodeValidator validator = new EstonianPersonalCodeValidator();
-
         for (int i = 0; i < 10000; i++) {
             Gender gender = EstonianPersonalCodeUtils.getRandomGender();
             LocalDate dateOfBirth = EstonianPersonalCodeUtils.getRandomDateOfBirth();
@@ -36,9 +40,6 @@ class EstonianPersonalCodeGeneratorTest {
 
     @Test
     void generatePersonalCodeWithBirthOrderNumber() throws PersonalCodeException {
-        EstonianPersonalCodeGenerator generator = new EstonianPersonalCodeGenerator();
-        EstonianPersonalCodeValidator validator = new EstonianPersonalCodeValidator();
-
         for (int i = 0; i < 10000; i++) {
             Gender gender = EstonianPersonalCodeUtils.getRandomGender();
             LocalDate dateOfBirth = EstonianPersonalCodeUtils.getRandomDateOfBirth();

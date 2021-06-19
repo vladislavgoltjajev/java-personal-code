@@ -1,5 +1,6 @@
 package com.github.vladislavgoltjajev.personalcode.locale.estonia;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EmptySource;
 import org.junit.jupiter.params.provider.NullSource;
@@ -8,6 +9,13 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class EstonianPersonalCodeValidatorTest {
+
+    EstonianPersonalCodeValidator validator;
+
+    @BeforeEach
+    void setUp() {
+        validator = new EstonianPersonalCodeValidator();
+    }
 
     @ParameterizedTest
     @ValueSource(strings = {
@@ -21,8 +29,7 @@ class EstonianPersonalCodeValidatorTest {
             "39912310174",
             "50002290046"
     })
-    public void validateValidPersonalCode(String personalCode) {
-        EstonianPersonalCodeValidator validator = new EstonianPersonalCodeValidator();
+    void validateValidPersonalCode(String personalCode) {
         assertThat(validator.isValid(personalCode)).isTrue();
     }
 
@@ -30,6 +37,8 @@ class EstonianPersonalCodeValidatorTest {
     @NullSource
     @EmptySource
     @ValueSource(strings = {
+            "123",
+            "test",
             "37605030291",
             "77605030291",
             "60319113016",
@@ -39,8 +48,7 @@ class EstonianPersonalCodeValidatorTest {
             "50102290005",
             "501022900051"
     })
-    public void validateInvalidPersonalCode(String personalCode) {
-        EstonianPersonalCodeValidator validator = new EstonianPersonalCodeValidator();
+    void validateInvalidPersonalCode(String personalCode) {
         assertThat(validator.isValid(personalCode)).isFalse();
     }
 }

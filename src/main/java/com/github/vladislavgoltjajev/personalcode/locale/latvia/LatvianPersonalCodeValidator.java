@@ -44,7 +44,7 @@ public final class LatvianPersonalCodeValidator {
         }
 
         int checksum = Character.getNumericValue(personalCode.charAt(personalCode.length() - 1));
-        return checksum == LatvianPersonalCodeUtils.calculateChecksum(personalCode);
+        return checksum == LatvianPersonalCodeUtils.getChecksum(personalCode);
     }
 
     /**

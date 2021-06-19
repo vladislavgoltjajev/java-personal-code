@@ -60,9 +60,9 @@ public final class EstonianPersonalCodeGenerator {
             throw new PersonalCodeException("Birth order number must be between 0 and 999");
         }
 
-        String personalCodeWithoutChecksum = EstonianPersonalCodeUtils.calculateGenderIdentifier(gender, dateOfBirth)
+        String personalCodeWithoutChecksum = EstonianPersonalCodeUtils.getGenderIdentifier(gender, dateOfBirth)
                 + dateOfBirth.format(EstonianPersonalCodeConstants.DATE_FORMATTER).substring(2)
                 + String.format("%03d", birthOrderNumber);
-        return personalCodeWithoutChecksum + EstonianPersonalCodeUtils.calculateChecksum(personalCodeWithoutChecksum);
+        return personalCodeWithoutChecksum + EstonianPersonalCodeUtils.getChecksum(personalCodeWithoutChecksum);
     }
 }

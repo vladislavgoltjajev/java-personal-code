@@ -76,8 +76,8 @@ public final class LatvianPersonalCodeGenerator {
         String dateString = dateOfBirth.format(LatvianPersonalCodeConstants.LEGACY_DATE_FORMATTER);
         String personalCodeWithoutChecksum = dateString.substring(0, 4) + dateString.substring(6)
                 + "-"
-                + LatvianPersonalCodeUtils.calculateCenturyIdentifier(dateOfBirth)
+                + LatvianPersonalCodeUtils.getCenturyIdentifier(dateOfBirth)
                 + String.format("%03d", birthOrderNumber);
-        return personalCodeWithoutChecksum + LatvianPersonalCodeUtils.calculateChecksum(personalCodeWithoutChecksum);
+        return personalCodeWithoutChecksum + LatvianPersonalCodeUtils.getChecksum(personalCodeWithoutChecksum);
     }
 }

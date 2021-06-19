@@ -79,7 +79,7 @@ public final class LatvianPersonalCodeParser {
      */
     public int getBirthOrderNumber(String personalCode) throws PersonalCodeException {
         validatePersonalCode(personalCode);
-        return Integer.parseInt(personalCode.substring(8, 9));
+        return Integer.parseInt(personalCode.substring(8, 11));
     }
 
     /**
@@ -89,7 +89,7 @@ public final class LatvianPersonalCodeParser {
      * @return Gender identifier.
      */
     private int getCenturyIdentifier(String personalCode) {
-        return Character.getNumericValue(personalCode.charAt(0));
+        return Character.getNumericValue(personalCode.charAt(7));
     }
 
     private void validatePersonalCode(String personalCode) throws PersonalCodeException {

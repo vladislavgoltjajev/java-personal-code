@@ -19,9 +19,9 @@ final class LithuanianPersonalCodeUtils {
      * If the resulting checksum is 10 again, the person's checksum is set to 0.
      *
      * @param personalCode Lithuanian personal code.
-     * @return Calculated checksum.
+     * @return Checksum.
      */
-    static int calculateChecksum(String personalCode) {
+    static int getChecksum(String personalCode) {
         int[] numberArray = Stream.of(personalCode
                 .substring(0, 10)
                 .split(""))
@@ -69,7 +69,7 @@ final class LithuanianPersonalCodeUtils {
      * @param dateOfBirth Person's date of birth.
      * @return Gender identifier.
      */
-    static int calculateGenderIdentifier(Gender gender, LocalDate dateOfBirth) {
+    static int getGenderIdentifier(Gender gender, LocalDate dateOfBirth) {
         int birthYear = dateOfBirth.getYear();
         boolean isMale = Gender.MALE.equals(gender);
 

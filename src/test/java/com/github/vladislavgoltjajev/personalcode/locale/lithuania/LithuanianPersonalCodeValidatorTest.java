@@ -21,7 +21,7 @@ class LithuanianPersonalCodeValidatorTest {
             "39912310174",
             "50002290046"
     })
-    public void validateValidPersonalCode(String personalCode) {
+    void validateValidPersonalCode(String personalCode) {
         LithuanianPersonalCodeValidator validator = new LithuanianPersonalCodeValidator();
         assertThat(validator.isValid(personalCode)).isTrue();
     }
@@ -30,6 +30,8 @@ class LithuanianPersonalCodeValidatorTest {
     @NullSource
     @EmptySource
     @ValueSource(strings = {
+            "123",
+            "test",
             "37605030291",
             "77605030291",
             "60319113016",
@@ -39,7 +41,7 @@ class LithuanianPersonalCodeValidatorTest {
             "50102290005",
             "501022900051"
     })
-    public void validateInvalidPersonalCode(String personalCode) {
+    void validateInvalidPersonalCode(String personalCode) {
         LithuanianPersonalCodeValidator validator = new LithuanianPersonalCodeValidator();
         assertThat(validator.isValid(personalCode)).isFalse();
     }

@@ -22,7 +22,7 @@ public final class EstonianPersonalCodeValidator {
         }
 
         int checksum = Character.getNumericValue(personalCode.charAt(personalCode.length() - 1));
-        return checksum == EstonianPersonalCodeUtils.calculateChecksum(personalCode);
+        return checksum == EstonianPersonalCodeUtils.getChecksum(personalCode);
     }
 
     /**

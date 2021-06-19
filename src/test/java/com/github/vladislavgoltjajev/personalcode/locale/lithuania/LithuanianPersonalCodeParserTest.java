@@ -2,30 +2,45 @@ package com.github.vladislavgoltjajev.personalcode.locale.lithuania;
 
 import com.github.vladislavgoltjajev.personalcode.enums.Gender;
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.EmptySource;
+import org.junit.jupiter.params.provider.NullSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class LithuanianPersonalCodeParserTest {
 
+    LithuanianPersonalCodeParser parser;
+
+    @BeforeEach
+    void setUp() {
+        parser = new LithuanianPersonalCodeParser();
+    }
+
     @ParameterizedTest
-    @CsvSource({
-            "17605130008,145",
-            "29912120004,121",
-            "34503020000,76",
-            "47508030046,45",
-            "50109130003,17",
-            "60302050016,15",
-            "60002290003,21",
-            "39912310174,21",
-            "50002290046,21"
+    @NullSource
+    @EmptySource
+    @ValueSource(strings = {
+            "123",
+            "test",
+            "37605030291",
+            "77605030291",
+            "60319113016",
+            "99999999999",
+            "39912310173",
+            "39002310001",
+            "50102290005",
+            "501022900051"
     })
-    void getAge(String personalCode, int expectedAge) throws PersonalCodeException {
-        LithuanianPersonalCodeParser parser = new LithuanianPersonalCodeParser();
-        assertThat(parser.getAge(personalCode).getYears()).isGreaterThanOrEqualTo(expectedAge);
+    void parseInvalidPersonalCode(String personalCode) {
+        assertThatThrownBy(() -> parser.getDateOfBirth(personalCode))
+                .isInstanceOf(PersonalCodeException.class);
     }
 
     @ParameterizedTest
@@ -41,7 +56,6 @@ class LithuanianPersonalCodeParserTest {
             "50002290046,MALE"
     })
     void getGender(String personalCode, Gender expectedGender) throws PersonalCodeException {
-        LithuanianPersonalCodeParser parser = new LithuanianPersonalCodeParser();
         assertThat(parser.getGender(personalCode)).isEqualTo(expectedGender);
     }
 
@@ -58,8 +72,23 @@ class LithuanianPersonalCodeParserTest {
             "50002290046,2000-02-29"
     })
     void getDateOfBirth(String personalCode, LocalDate expectedDateOfBirth) throws PersonalCodeException {
-        LithuanianPersonalCodeParser parser = new LithuanianPersonalCodeParser();
         assertThat(parser.getDateOfBirth(personalCode)).isEqualTo(expectedDateOfBirth);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "17605130008,145",
+            "29912120004,121",
+            "34503020000,76",
+            "47508030046,45",
+            "50109130003,17",
+            "60302050016,15",
+            "60002290003,21",
+            "39912310174,21",
+            "50002290046,21"
+    })
+    void getAge(String personalCode, int expectedAge) throws PersonalCodeException {
+        assertThat(parser.getAge(personalCode).getYears()).isGreaterThanOrEqualTo(expectedAge);
     }
 
     @ParameterizedTest
@@ -75,7 +104,6 @@ class LithuanianPersonalCodeParserTest {
             "50002290046,4"
     })
     void getBirthOrderNumber(String personalCode, int expectedBirthOrderNumber) throws PersonalCodeException {
-        LithuanianPersonalCodeParser parser = new LithuanianPersonalCodeParser();
         assertThat(parser.getBirthOrderNumber(personalCode)).isEqualTo(expectedBirthOrderNumber);
     }
 }
