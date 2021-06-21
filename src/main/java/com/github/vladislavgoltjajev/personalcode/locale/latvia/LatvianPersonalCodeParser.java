@@ -85,7 +85,7 @@ public final class LatvianPersonalCodeParser {
     /**
      * Returns the century identifier (seventh digit) from the legacy Latvian personal code.
      *
-     * @param personalCode Latvian personal code.
+     * @param personalCode Legacy Latvian personal code.
      * @return Gender identifier.
      */
     private int getCenturyIdentifier(String personalCode) {
