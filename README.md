@@ -1,4 +1,5 @@
 # java-personal-code
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.vladislavgoltjajev/java-personal-code)](https://mvnrepository.com/artifact/com.github.vladislavgoltjajev/java-personal-code)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/vladislavgoltjajev/java-personal-code/blob/main/LICENSE)
 
 Lightweight library for working with government-issued personal identification codes.
@@ -9,7 +10,7 @@ JDK 8 or higher is required for the library to work.
 ### Gradle
 ```groovy
 dependencies {
-    implementation 'com.github.vladislavgoltjajev:java-personal-code:1.0'
+    implementation 'com.github.vladislavgoltjajev:java-personal-code:X.X'
 }
 ```
 ### Maven
@@ -17,7 +18,7 @@ dependencies {
 <dependency>
     <groupId>com.github.vladislavgoltjajev</groupId>
     <artifactId>java-personal-code</artifactId>
-    <version>1.0</version>
+    <version>X.X</version>
 </dependency>
 ```
 
