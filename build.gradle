@@ -1,9 +1,13 @@
 plugins {
     id 'java'
+    id 'maven-publish'
+    id 'signing'
 }
 
 group 'com.github.vladislavgoltjajev'
 version '1.0'
+
+apply from: 'publish.gradle'
 
 repositories {
     mavenCentral()

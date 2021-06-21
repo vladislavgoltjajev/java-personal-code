@@ -4,7 +4,7 @@
 Lightweight library for working with government-issued personal identification codes.
 
 ## Import
-:exclamation::exclamation::exclamation: Library is currently not hosted anywhere. :exclamation::exclamation::exclamation:   
+The library is available on Maven Central.  
 JDK 8 or higher is required for the library to work.
 ### Gradle
 ```groovy

@@ -1,0 +1,47 @@
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            pom {
+                name = 'java-personal-code'
+                description = 'Lightweight library for working with government-issued personal identification codes.'
+                url = 'https://github.com/vladislavgoltjajev/java-personal-code'
+                licenses {
+                    license {
+                        name = 'The MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'vladislavgoltjajev'
+                        name = 'Vladislav Goltjajev'
+                        email = 'vladislav.goltjajev@gmail.com'
+                    }
+                }
+                scm {
+                    url = 'https://github.com/vladislavgoltjajev/java-personal-code'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = 'OSSRH'
+            url = 'https://oss.sonatype.org/service/local/staging/deploy/maven2'
+            credentials {
+                username = findProperty('sonatype.username')
+                password = findProperty('sonatype.password')
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
