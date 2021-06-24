@@ -305,7 +305,7 @@ public class Test {
         <td>generatePersonalCode(Gender gender)</td>
         <td>String</td>
         <td>
-            Generates an Estonian personal code using the given gender.<br/>
+            Generates a Lithuanian personal code using the given gender.<br/>
             The date of birth and birth order number are generated randomly.
         </td>
     </tr>
