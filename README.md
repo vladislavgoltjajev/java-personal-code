@@ -29,11 +29,14 @@ public class Test {
      * Example operations using an Estonian personal code.
      */
     public static void main(String[] args) {
+        // Generate personal code
         EstonianPersonalCodeGenerator generator = new EstonianPersonalCodeGenerator();
         String personalCode = generator.generateRandomPersonlCode(); // 37209030023
+        // Validate personal code
         EstonianPersonalCodeValidator validator = new EstonianPersonalCodeValidator();
         boolean isValidFormat = validator.isValidFormat(personalCode); // true
         boolean isValid = validator.isValid(personalCode); // true
+        // Extract data from personal code
         EstonianPersonalCodeParser parser = new EstonianPersonalCodeParser();
         LocalDate dateOfBirth = parser.getDateOfBirth(personalCode); // 03.09.1972
         Gender gender = parser.getGender(personalCode); // MALE
