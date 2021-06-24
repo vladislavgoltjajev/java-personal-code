@@ -33,7 +33,7 @@ public final class EstonianPersonalCodeParser {
 
     /**
      * Returns the person's date of birth.
-     * Digits 2 through 7 of the Estonian personal code show the person's birth date in the format yyddMM.
+     * Digits 2 through 7 of the Estonian personal code show the person's date of birth in the format YYMMDD.
      * Using the gender identifier (first digit), it is possible to acquire the person's full year of birth.
      * 1, 2 - years 1800-1899.
      * 3, 4 - years 1900-1999.

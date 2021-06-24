@@ -11,7 +11,7 @@ public final class LithuanianPersonalCodeValidator {
      * @return Whether or not the Lithuanian personal code is valid.
      */
     public boolean isValid(String personalCode) {
-        if (!isFormatValid(personalCode)) {
+        if (!isValidFormat(personalCode)) {
             return false;
         }
 
@@ -27,14 +27,14 @@ public final class LithuanianPersonalCodeValidator {
 
     /**
      * Checks if the Lithuanian personal code conforms to the correct format.
-     * Does not check the personal code's integrity and the validity of the embedded data.
+     * Does not check the personal code's integrity or the validity of the embedded data.
      *
      * @param personalCode Lithuanian personal code.
      * @return Whether or not the Lithuanian personal code conforms to the correct format.
      */
-    public boolean isFormatValid(String personalCode) {
+    public boolean isValidFormat(String personalCode) {
         return personalCode != null
                 && !personalCode.isBlank()
-                && personalCode.matches(LithuanianPersonalCodeConstants.LITHUANIAN_PERSONAL_CODE_REGEX);
+                && personalCode.matches(LithuanianPersonalCodeConstants.PERSONAL_CODE_REGEX);
     }
 }

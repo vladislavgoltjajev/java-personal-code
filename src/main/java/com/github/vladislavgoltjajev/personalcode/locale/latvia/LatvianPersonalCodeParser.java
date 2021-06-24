@@ -10,7 +10,7 @@ public final class LatvianPersonalCodeParser {
 
     /**
      * Returns the person's date of birth.
-     * Digits 1 through 6 of the legacy Latvian personal code show the person's birth date in the format yyddMM.
+     * Digits 1 through 6 of the legacy Latvian personal code show the person's date of birth in the format DDMMYY.
      * Using the century identifier (seventh digit), it is possible to acquire the person's full year of birth.
      * 0 - years 1800-1899.
      * 1 - years 1900-1999.

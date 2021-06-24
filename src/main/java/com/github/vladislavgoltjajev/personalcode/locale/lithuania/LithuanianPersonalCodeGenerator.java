@@ -30,16 +30,12 @@ public final class LithuanianPersonalCodeGenerator {
      *
      * @param gender Person's gender.
      * @return Lithuanian personal code.
+     * @throws PersonalCodeException If the gender is null.
      */
-    public String generatePersonalCode(Gender gender) {
-        try {
-            return generatePersonalCode(gender,
-                    LithuanianPersonalCodeUtils.getRandomDateOfBirth(),
-                    LithuanianPersonalCodeUtils.getRandomBirthOrderNumber());
-        } catch (PersonalCodeException e) {
-            // Invalid input parameters not possible, so the checked exception will never be thrown.
-            throw new RuntimeException(e);
-        }
+    public String generatePersonalCode(Gender gender) throws PersonalCodeException {
+        return generatePersonalCode(gender,
+                LithuanianPersonalCodeUtils.getRandomDateOfBirth(),
+                LithuanianPersonalCodeUtils.getRandomBirthOrderNumber());
     }
 
     /**
@@ -49,7 +45,7 @@ public final class LithuanianPersonalCodeGenerator {
      * @param gender      Person's gender.
      * @param dateOfBirth Person's date of birth.
      * @return Lithuanian personal code.
-     * @throws PersonalCodeException If the date of birth falls outside the allowed range (01.01.1800-31.12.2099).
+     * @throws PersonalCodeException If the gender or date of birth is null or falls outside the allowed range (01.01.1800-31.12.2099).
      */
     public String generatePersonalCode(Gender gender, LocalDate dateOfBirth) throws PersonalCodeException {
         return generatePersonalCode(gender, dateOfBirth, LithuanianPersonalCodeUtils.getRandomBirthOrderNumber());
@@ -62,12 +58,16 @@ public final class LithuanianPersonalCodeGenerator {
      * @param dateOfBirth      Person's date of birth.
      * @param birthOrderNumber Person's birth order number.
      * @return Lithuanian personal code.
-     * @throws PersonalCodeException If the date of birth or birth order number fall outside their allowed ranges (01.01.1800-31.12.2099 and 0-999, respectively).
+     * @throws PersonalCodeException If the date of birth is null or if the date of birth or birth order number fall
+     *                               outside their allowed ranges (01.01.1800-31.12.2099 and 0-999, respectively).
      */
     public String generatePersonalCode(Gender gender, LocalDate dateOfBirth, int birthOrderNumber)
             throws PersonalCodeException {
-        if (dateOfBirth == null
-                || dateOfBirth.isBefore(LithuanianPersonalCodeConstants.MINIMUM_DATE)
+        if (gender == null) {
+            throw new PersonalCodeException("Gender must be specified");
+        } else if (dateOfBirth == null) {
+            throw new PersonalCodeException("Date of birth must be specified");
+        } else if (dateOfBirth.isBefore(LithuanianPersonalCodeConstants.MINIMUM_DATE)
                 || dateOfBirth.isAfter(LithuanianPersonalCodeConstants.MAXIMUM_DATE)) {
             throw new PersonalCodeException(String.format("Date of birth must be between %s and %s",
                     DateUtils.getReadableFormatDate(LithuanianPersonalCodeConstants.MINIMUM_DATE),

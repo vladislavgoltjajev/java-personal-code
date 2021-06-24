@@ -9,12 +9,12 @@ import java.util.stream.Stream;
 final class LatvianPersonalCodeUtils {
 
     /**
-     * Calculates the legacy Latvian personal code checksum.
+     * Calculates the Latvian personal code checksum.
      * The checksum (last digit) is calculated by multiplying the first 10 digits of the personal code by
      * the corresponding number in an array of multipliers [1, 6, 3, 7, 9, 10, 5, 8, 4, 2],
      * summing up each result, subtracting the sum from 1101 and reducing the result modulo 11 and 10.
      *
-     * @param personalCode Latvian personal code.
+     * @param personalCode Latvian personal code without the checksum.
      * @return Checksum.
      */
     static int getChecksum(String personalCode) {
@@ -56,7 +56,7 @@ final class LatvianPersonalCodeUtils {
     }
 
     /**
-     * Generates a random date between the earliest (01.01.1800) and latest (31.12.2099) possible birth dates.
+     * Generates a random date between the earliest (01.01.1800) and latest (31.12.2099) possible dates of birth.
      *
      * @return Random date of birth.
      */

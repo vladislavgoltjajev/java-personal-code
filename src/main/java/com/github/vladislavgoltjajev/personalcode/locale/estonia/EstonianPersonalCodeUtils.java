@@ -18,11 +18,11 @@ final class EstonianPersonalCodeUtils {
      * [3, 4, 5, 6, 7, 8, 9, 1, 2, 3].
      * If the resulting checksum is 10 again, the person's checksum is set to 0.
      *
-     * @param personalCode Estonian personal code.
+     * @param personalCode Estonian personal code without the checksum.
      * @return Checksum.
      */
     static int getChecksum(String personalCode) {
-        int[] numberArray = Stream.of(personalCode
+        int[] digits = Stream.of(personalCode
                 .substring(0, 10)
                 .split(""))
                 .mapToInt(Integer::parseInt)
@@ -30,8 +30,8 @@ final class EstonianPersonalCodeUtils {
         int sum = 0;
         int[] multipliers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 1};
 
-        for (int i = 0; i < numberArray.length; i++) {
-            sum += numberArray[i] * multipliers[i];
+        for (int i = 0; i < digits.length; i++) {
+            sum += digits[i] * multipliers[i];
         }
 
         int checksum = sum % 11;
@@ -40,8 +40,8 @@ final class EstonianPersonalCodeUtils {
             sum = 0;
             multipliers = new int[]{3, 4, 5, 6, 7, 8, 9, 1, 2, 3};
 
-            for (int i = 0; i < numberArray.length; i++) {
-                sum += numberArray[i] * multipliers[i];
+            for (int i = 0; i < digits.length; i++) {
+                sum += digits[i] * multipliers[i];
             }
 
             checksum = sum % 11;
@@ -87,7 +87,7 @@ final class EstonianPersonalCodeUtils {
     }
 
     /**
-     * Generates a random date between the earliest (01.01.1800) and latest (31.12.2099) possible birth dates.
+     * Generates a random date between the earliest (01.01.1800) and latest (31.12.2099) possible dates of birth.
      *
      * @return Random date of birth.
      */

@@ -1,4 +1,4 @@
-package com.github.vladislavgoltjajev.personalcode.locale.lithuania;
+package com.github.vladislavgoltjajev.personalcode.locale.luxembourg;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -8,26 +8,25 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class LithuanianPersonalCodeValidatorTest {
+class LuxembourgishPersonalCodeValidatorTest {
 
-    private LithuanianPersonalCodeValidator validator;
+    LuxembourgishPersonalCodeValidator validator;
 
     @BeforeEach
     void setUp() {
-        validator = new LithuanianPersonalCodeValidator();
+        validator = new LuxembourgishPersonalCodeValidator();
     }
 
     @ParameterizedTest
     @ValueSource(strings = {
-            "17605130008",
-            "29912120004",
-            "34503020000",
-            "47508030046",
-            "50109130003",
-            "60302050016",
-            "60002290003",
-            "39912310174",
-            "50002290046"
+            "2049081577690",
+            "2026060593451",
+            "2000022900197",
+            "1944051267737",
+            "2087020155450",
+            "1973100283493",
+            "1917031977873",
+            "2015060607344"
     })
     void validateValidPersonalCode(String personalCode) {
         assertThat(validator.isValid(personalCode)).isTrue();
@@ -39,14 +38,10 @@ class LithuanianPersonalCodeValidatorTest {
     @ValueSource(strings = {
             "123",
             "test",
-            "37605030291",
-            "77605030291",
-            "60319113016",
-            "99999999999",
-            "39912310173",
-            "39002310001",
-            "50102290005",
-            "501022900051"
+            "2087022955450",
+            "2001992993451",
+            "2015-060607344",
+            "20150606073441"
     })
     void validateInvalidPersonalCode(String personalCode) {
         assertThat(validator.isValid(personalCode)).isFalse();

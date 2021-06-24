@@ -21,9 +21,7 @@ public final class LatvianPersonalCodeValidator {
      * @return Whether or not the updated Latvian personal code is valid.
      */
     public boolean isValidUpdatedPersonalCode(String personalCode) {
-        return personalCode != null
-                && !personalCode.isBlank()
-                && personalCode.matches(LatvianPersonalCodeConstants.LATVIAN_PERSONAL_CODE_REGEX);
+        return isValidUpdatedFormat(personalCode) && isChecksumValid(personalCode);
     }
 
     /**
@@ -33,7 +31,7 @@ public final class LatvianPersonalCodeValidator {
      * @return Whether or not the legacy Latvian personal code is valid.
      */
     public boolean isValidLegacyPersonalCode(String personalCode) {
-        if (!isLegacyFormatValid(personalCode)) {
+        if (!isValidLegacyFormat(personalCode)) {
             return false;
         }
 
@@ -43,20 +41,48 @@ public final class LatvianPersonalCodeValidator {
             return false;
         }
 
-        int checksum = Character.getNumericValue(personalCode.charAt(personalCode.length() - 1));
-        return checksum == LatvianPersonalCodeUtils.getChecksum(personalCode);
+        return isChecksumValid(personalCode);
+    }
+
+    /**
+     * Checks if the specified Latvian personal code conforms to the correct legacy or updated format.
+     * Does not check the personal code's integrity or the validity of the embedded data.
+     *
+     * @param personalCode Latvian personal code
+     * @return Whether or not the Latvian personal code conforms to the correct legacy or updated format.
+     */
+    public boolean isValidFormat(String personalCode) {
+        return isValidUpdatedFormat(personalCode) || isValidLegacyPersonalCode(personalCode);
+    }
+
+    /**
+     * Checks if the updated Latvian personal code conforms to the correct format.
+     * Does not check the personal code's integrity.
+     *
+     * @param personalCode Updated Latvian personal code.
+     * @return Whether or not the legacy Latvian personal code conforms to the correct format.
+     */
+    public boolean isValidUpdatedFormat(String personalCode) {
+        return personalCode != null
+                && !personalCode.isBlank()
+                && personalCode.matches(LatvianPersonalCodeConstants.UPDATED_PERSONAL_CODE_REGEX);
     }
 
     /**
      * Checks if the legacy Latvian personal code conforms to the correct format.
-     * Does not check the personal code's integrity and the validity of the embedded data.
+     * Does not check the personal code's integrity or the validity of the embedded data.
      *
      * @param personalCode Legacy Latvian personal code.
      * @return Whether or not the legacy Latvian personal code conforms to the correct format.
      */
-    public boolean isLegacyFormatValid(String personalCode) {
+    public boolean isValidLegacyFormat(String personalCode) {
         return personalCode != null
                 && !personalCode.isBlank()
-                && personalCode.matches(LatvianPersonalCodeConstants.LEGACY_LATVIAN_PERSONAL_CODE_REGEX);
+                && personalCode.matches(LatvianPersonalCodeConstants.LEGACY_PERSONAL_CODE_REGEX);
+    }
+
+    private boolean isChecksumValid(String personalCode) {
+        int checksum = Character.getNumericValue(personalCode.charAt(personalCode.length() - 1));
+        return checksum == LatvianPersonalCodeUtils.getChecksum(personalCode);
     }
 }

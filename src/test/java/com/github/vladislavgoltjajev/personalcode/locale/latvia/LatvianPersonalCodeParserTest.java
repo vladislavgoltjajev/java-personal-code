@@ -50,15 +50,14 @@ class LatvianPersonalCodeParserTest {
 
     @ParameterizedTest
     @ValueSource(strings = {
-            "325442-49548",
-            "329174-26924",
-            "32550128526",
-            "32220316612",
-            "323989-74020",
-            "32744759186",
-            "322589-41469",
-            "329294-80588",
-            "32240310721"
+            "32073120115",
+            "32019028596",
+            "32699402624",
+            "32416565491",
+            "323691-93794",
+            "321412-91101",
+            "328926-13925",
+            "323106-55350"
     })
     void parseUpdatedFormatPersonalCode(String personalCode) {
         assertThatThrownBy(() -> parser.getDateOfBirth(personalCode))

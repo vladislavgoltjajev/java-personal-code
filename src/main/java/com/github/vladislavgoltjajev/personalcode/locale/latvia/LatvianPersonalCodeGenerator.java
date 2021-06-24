@@ -27,7 +27,6 @@ public final class LatvianPersonalCodeGenerator {
         return generateRandomUpdatedPersonalCode(Math.random() > 0.5);
     }
 
-
     /**
      * Generates a random updated Latvian personal code.
      *
@@ -35,8 +34,9 @@ public final class LatvianPersonalCodeGenerator {
      * @return Random updated Latvian personal code.
      */
     public String generateRandomUpdatedPersonalCode(boolean addDash) {
-        int identifier = new Random().nextInt(1000000000);
-        String personalCode = "32" + String.format("%09d", identifier);
+        int identifier = new Random().nextInt(100000000);
+        String personalCodeWithoutChecksum = "32" + String.format("%08d", identifier);
+        String personalCode = personalCodeWithoutChecksum + LatvianPersonalCodeUtils.getChecksum(personalCodeWithoutChecksum);
 
         if (addDash) {
             personalCode = personalCode.substring(0, 6) + "-" + personalCode.substring(6);
@@ -66,7 +66,7 @@ public final class LatvianPersonalCodeGenerator {
      *
      * @param dateOfBirth Person's date of birth.
      * @return Legacy Latvian personal code.
-     * @throws PersonalCodeException If the date of birth falls outside the allowed range (01.01.1800-30.06.2017).
+     * @throws PersonalCodeException If the date of birth is null or falls outside the allowed range (01.01.1800-30.06.2017).
      */
     public String generateLegacyPersonalCode(LocalDate dateOfBirth) throws PersonalCodeException {
         return generateLegacyPersonalCode(dateOfBirth, LatvianPersonalCodeUtils.getRandomBirthOrderNumber());
@@ -78,11 +78,13 @@ public final class LatvianPersonalCodeGenerator {
      * @param dateOfBirth      Person's date of birth.
      * @param birthOrderNumber Person's birth order number.
      * @return Legacy Latvian personal code.
-     * @throws PersonalCodeException If the date of birth or birth order number fall outside their allowed ranges (01.01.1800-31.12.2099 and 0-999, respectively).
+     * @throws PersonalCodeException If the date of birth is null or if the date of birth or birth order number fall
+     *                               outside their allowed ranges (01.01.1800-31.12.2099 and 0-999, respectively).
      */
     public String generateLegacyPersonalCode(LocalDate dateOfBirth, int birthOrderNumber) throws PersonalCodeException {
-        if (dateOfBirth == null
-                || dateOfBirth.isBefore(LatvianPersonalCodeConstants.MINIMUM_LEGACY_DATE)
+        if (dateOfBirth == null) {
+            throw new PersonalCodeException("Date of birth must be specified");
+        } else if (dateOfBirth.isBefore(LatvianPersonalCodeConstants.MINIMUM_LEGACY_DATE)
                 || dateOfBirth.isAfter(LatvianPersonalCodeConstants.MAXIMUM_LEGACY_DATE)) {
             throw new PersonalCodeException(String.format("Date of birth must be between %s and %s",
                     DateUtils.getReadableFormatDate(LatvianPersonalCodeConstants.MINIMUM_LEGACY_DATE),

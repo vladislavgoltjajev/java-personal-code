@@ -32,7 +32,7 @@ public class Test {
         EstonianPersonalCodeGenerator generator = new EstonianPersonalCodeGenerator();
         String personalCode = generator.generateRandomPersonlCode(); // 37209030023
         EstonianPersonalCodeValidator validator = new EstonianPersonalCodeValidator();
-        boolean isFormatValid = validator.isFormatValid(personalCode); // true
+        boolean isValidFormat = validator.isValidFormat(personalCode); // true
         boolean isValid = validator.isValid(personalCode); // true
         EstonianPersonalCodeParser parser = new EstonianPersonalCodeParser();
         LocalDate dateOfBirth = parser.getDateOfBirth(personalCode); // 03.09.1972
@@ -46,6 +46,7 @@ public class Test {
 * [Estonia](#estonia)
 * [Latvia](#latvia)
 * [Lithuania](#lithuania)
+* [Luxembourg](#luxembourg)
 
 ### Estonia
 #### EstonianPersonalCodeValidator
@@ -61,11 +62,11 @@ public class Test {
         <td>Checks if the Estonian personal code is valid.</td>
     </tr>
     <tr>
-        <td>isFormatValid(String personalCode)</td>
+        <td>isValidFormat(String personalCode)</td>
         <td>boolean</td>
         <td>
             Checks if the Estonian personal code conforms to the correct format.<br/>
-            Does not check the personal code's integrity and the validity of the embedded data.
+            Does not check the personal code's integrity or the validity of the embedded data.
         </td>
     </tr>
 </table>
@@ -158,11 +159,27 @@ public class Test {
         <td>Checks if the legacy Latvian personal code is valid.</td>
     </tr>
     <tr>
-        <td>isLegacyFormatValid(String personalCode)</td>
+        <td>isValidFormat(String personalCode)</td>
+        <td>boolean</td>
+        <td>
+            Checks if the specified Latvian personal code conforms to the correct legacy or updated format.<br/>
+            Does not check the personal code's integrity or the validity of the embedded data.
+        </td>
+    </tr>
+    <tr>
+        <td>isValidUpdatedFormat(String personalCode)</td>
+        <td>boolean</td>
+        <td>
+            Checks if the updated Latvian personal code conforms to the correct format.<br/>
+            Does not check the personal code's integrity.
+        </td>
+    </tr>
+    <tr>
+        <td>isValidLegacyFormat(String personalCode)</td>
         <td>boolean</td>
         <td>
             Checks if the legacy Latvian personal code conforms to the correct format.<br/>
-            Does not check the personal code's integrity and the validity of the embedded data.
+            Does not check the personal code's integrity or the validity of the embedded data.
         </td>
     </tr>
 </table>
@@ -251,11 +268,11 @@ public class Test {
         <td>Checks if the Lithuanian personal code is valid.</td>
     </tr>
     <tr>
-        <td>isFormatValid(String personalCode)</td>
+        <td>isValidFormat(String personalCode)</td>
         <td>boolean</td>
         <td>
             Checks if the Lithuanian personal code conforms to the correct format.<br/>
-            Does not check the personal code's integrity and the validity of the embedded data.
+            Does not check the personal code's integrity or the validity of the embedded data.
         </td>
     </tr>
 </table>
@@ -321,5 +338,79 @@ public class Test {
         <td>generatePersonalCode(Gender gender, LocalDate dateOfBirth, int birthOrderNumber)</td>
         <td>String</td>
         <td>Generates an Lithuanian personal code using the given gender, date of birth and birth order number.</td>
+    </tr>
+</table>
+
+### Luxembourg
+#### LuxembourgishPersonalCodeValidator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>isValid(String personalCode)</td>
+        <td>boolean</td>
+        <td>Checks if the Luxembourgish personal code is valid.</td>
+    </tr>
+    <tr>
+        <td>isValidFormat(String personalCode)</td>
+        <td>boolean</td>
+        <td>
+            Checks if the Luxembourgish personal code conforms to the correct format.<br/>
+            Does not check the personal code's integrity or the validity of the embedded data.
+        </td>
+    </tr>
+</table>
+
+#### LuxembourgishPersonalCodeParser
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>getDateOfBirth(String personalCode)</td>
+        <td>LocalDate</td>
+        <td>Returns the person's date of birth.</td>
+    </tr>
+    <tr>
+        <td>getAge(String personalCode)</td>
+        <td>Period</td>
+        <td>Returns the person's age.</td>
+    </tr>
+    <tr>
+        <td>getBirthOrderNumber(String personalCode)</td>
+        <td>int</td>
+        <td>Returns the person's birth order number (digits 9-11).</td>
+    </tr>
+</table>
+
+#### LuxembourgishPersonalCodeGenerator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>generateRandomPersonalCode()</td>
+        <td>String</td>
+        <td>Generates a random Luxembourgish personal code.</td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(LocalDate dateOfBirth)</td>
+        <td>String</td>
+        <td>
+            Generates an Estonian personal code using the given date of birth.<br/>
+            The birth order number is generated randomly.
+        </td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(LocalDate dateOfBirth, int birthOrderNumber)</td>
+        <td>String</td>
+        <td>Generates an Estonian personal code using the given date of birth and birth order number.</td>
     </tr>
 </table>

@@ -28,15 +28,14 @@ class LatvianPersonalCodeValidatorTest {
             "060287-06450",
             "140761-19428",
             "120768-18764",
-            "325442-49548",
-            "329174-26924",
-            "32550128526",
-            "32220316612",
-            "323989-74020",
-            "32744759186",
-            "322589-41469",
-            "329294-80588",
-            "32240310721"
+            "32073120115",
+            "32019028596",
+            "32699402624",
+            "32416565491",
+            "323691-93794",
+            "321412-91101",
+            "328926-13925",
+            "323106-55350"
     })
     void validateValidPersonalCode(String personalCode) {
         assertThat(validator.isValid(personalCode)).isTrue();
@@ -69,15 +68,14 @@ class LatvianPersonalCodeValidatorTest {
 
     @ParameterizedTest
     @ValueSource(strings = {
-            "325442-49548",
-            "329174-26924",
-            "32550128526",
-            "32220316612",
-            "323989-74020",
-            "32744759186",
-            "322589-41469",
-            "329294-80588",
-            "32240310721"
+            "32073120115",
+            "32019028596",
+            "32699402624",
+            "32416565491",
+            "323691-93794",
+            "321412-91101",
+            "328926-13925",
+            "323106-55350"
     })
     void validateValidUpdatedPersonalCode(String personalCode) {
         assertThat(validator.isValidUpdatedPersonalCode(personalCode)).isTrue();
