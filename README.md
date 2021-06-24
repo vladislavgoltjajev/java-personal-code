@@ -70,6 +70,70 @@ public class Test {
     </tr>
 </table>
 
+#### EstonianPersonalCodeParser
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>getGender(String personalCode)</td>
+        <td>Gender</td>
+        <td>Returns the person's gender.</td>
+    </tr>
+    <tr>
+        <td>getDateOfBirth(String personalCode)</td>
+        <td>LocalDate</td>
+        <td>Returns the person's date of birth.</td>
+    </tr>
+    <tr>
+        <td>getAge(String personalCode)</td>
+        <td>Period</td>
+        <td>Returns the person's age.</td>
+    </tr>
+    <tr>
+        <td>getBirthOrderNumber(String personalCode)</td>
+        <td>int</td>
+        <td>Returns the person's birth order number (digits 8-10).</td>
+    </tr>
+</table>
+
+#### EstonianPersonalCodeGenerator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>generateRandomPersonalCode()</td>
+        <td>String</td>
+        <td>Generates a random Estonian personal code.</td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(Gender gender)</td>
+        <td>String</td>
+        <td>
+            Generates an Estonian personal code using the given gender.<br/>
+            The date of birth and birth order number are generated randomly.
+        </td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(Gender gender, LocalDate dateOfBirth)</td>
+        <td>String</td>
+        <td>
+            Generates an Estonian personal code using the given gender and date of birth.<br/>
+            The birth order number is generated randomly.
+        </td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(Gender gender, LocalDate dateOfBirth, int birthOrderNumber)</td>
+        <td>String</td>
+        <td>Generates an Estonian personal code using the given gender, date of birth and birth order number.</td>
+    </tr>
+</table>
+
 ### Latvia
 #### LatvianPersonalCodeValidator
 <table>
@@ -81,7 +145,7 @@ public class Test {
     <tr>
         <td>isValid(String personalCode)</td>
         <td>boolean</td>
-        <td>Checks if the Latvian personal code (both legacy and updated) is valid.</td>
+        <td>Checks if the Latvian personal code (either updated or legacy) is valid.</td>
     </tr>
     <tr>
         <td>isValidUpdatedPersonalCode(String personalCode)</td>
@@ -100,6 +164,76 @@ public class Test {
             Checks if the legacy Latvian personal code conforms to the correct format.<br/>
             Does not check the personal code's integrity and the validity of the embedded data.
         </td>
+    </tr>
+</table>
+
+#### LatvianPersonalCodeParser
+:exclamation: Only works with legacy Latvian personal codes.
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>getDateOfBirth(String personalCode)</td>
+        <td>LocalDate</td>
+        <td>Returns the person's date of birth.</td>
+    </tr>
+    <tr>
+        <td>getAge(String personalCode)</td>
+        <td>Period</td>
+        <td>Returns the person's age.</td>
+    </tr>
+    <tr>
+        <td>getBirthOrderNumber(String personalCode)</td>
+        <td>int</td>
+        <td>Returns the person's birth order number (digits 8-10).</td>
+    </tr>
+</table>
+
+#### LatvianPersonalCodeGenerator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>generateRandomPersonalCode()</td>
+        <td>String</td>
+        <td>Generates a random Latvian personal code.</td>
+    </tr>
+    <tr>
+        <td>generateRandomUpdatedPersonalCode()</td>
+        <td>String</td>
+        <td>
+            Generates a random updated Latvian personal code.<br/>
+            May contain a dash between the 6th and 7th digit.
+        </td>
+    </tr>
+    <tr>
+        <td>generateRandomUpdatedPersonalCode(boolean addDash)</td>
+        <td>String</td>
+        <td>Generates a random updated Latvian personal code.</td>
+    </tr>
+    <tr>
+        <td>generateRandomLegacyPersonalCode()</td>
+        <td>String</td>
+        <td>Generates a random legacy Latvian personal code.</td>
+    </tr>
+    <tr>
+        <td>generateLegacyPersonalCode(LocalDate dateOfBirth)</td>
+        <td>String</td>
+        <td>
+            Generates a legacy Latvian personal code using the given date of birth.<br/>
+            The birth order number is generated randomly.
+        </td>
+    </tr>
+    <tr>
+        <td>generateLegacyPersonalCode(LocalDate dateOfBirth, int birthOrderNumber)</td>
+        <td>String</td>
+        <td>Generates a legacy Latvian personal code using the given date of birth and birth order number.</td>
     </tr>
 </table>
 
@@ -123,5 +257,69 @@ public class Test {
             Checks if the Lithuanian personal code conforms to the correct format.<br/>
             Does not check the personal code's integrity and the validity of the embedded data.
         </td>
+    </tr>
+</table>
+
+#### LithuanianPersonalCodeParser
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>getGender(String personalCode)</td>
+        <td>Gender</td>
+        <td>Returns the person's gender.</td>
+    </tr>
+    <tr>
+        <td>getDateOfBirth(String personalCode)</td>
+        <td>LocalDate</td>
+        <td>Returns the person's date of birth.</td>
+    </tr>
+    <tr>
+        <td>getAge(String personalCode)</td>
+        <td>Period</td>
+        <td>Returns the person's age.</td>
+    </tr>
+    <tr>
+        <td>getBirthOrderNumber(String personalCode)</td>
+        <td>int</td>
+        <td>Returns the person's birth order number (digits 8-10).</td>
+    </tr>
+</table>
+
+#### LithuanianPersonalCodeGenerator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>generateRandomPersonalCode()</td>
+        <td>String</td>
+        <td>Generates a random Lithuanian personal code.</td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(Gender gender)</td>
+        <td>String</td>
+        <td>
+            Generates an Estonian personal code using the given gender.<br/>
+            The date of birth and birth order number are generated randomly.
+        </td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(Gender gender, LocalDate dateOfBirth)</td>
+        <td>String</td>
+        <td>
+            Generates an Lithuanian personal code using the given gender and date of birth.<br/>
+            The birth order number is generated randomly.
+        </td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(Gender gender, LocalDate dateOfBirth, int birthOrderNumber)</td>
+        <td>String</td>
+        <td>Generates an Lithuanian personal code using the given gender, date of birth and birth order number.</td>
     </tr>
 </table>

@@ -52,7 +52,7 @@ public final class LatvianPersonalCodeParser {
     }
 
     /**
-     * Returns a Period object containing the person's age.
+     * Returns the person's age.
      *
      * @param personalCode Legacy Latvian personal code.
      * @return Period object containing the person's age.
@@ -71,7 +71,7 @@ public final class LatvianPersonalCodeParser {
     }
 
     /**
-     * Returns the birth order number (digits 8-10) in the legacy Latvian personal code.
+     * Returns the person's birth order number (digits 8-10).
      *
      * @param personalCode Legacy Latvian personal code.
      * @return Birth order number.

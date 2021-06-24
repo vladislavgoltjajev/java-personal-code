@@ -7,3 +7,4 @@ gradle-app.setting
 .gradletasknamecache
 *.iml
 gradle.properties
+notes.txt

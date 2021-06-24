@@ -10,15 +10,35 @@ public final class LatvianPersonalCodeGenerator {
 
     /**
      * Generates a random Latvian personal code.
-     * May contain a dash between the 6th and 7th digit.
      *
      * @return Random Latvian personal code.
      */
     public String generateRandomPersonalCode() {
+        return Math.random() > 0.5 ? generateRandomUpdatedPersonalCode() : generateRandomLegacyPersonalCode();
+    }
+
+    /**
+     * Generates a random updated Latvian personal code.
+     * May contain a dash between the 6th and 7th digit.
+     *
+     * @return Random updated Latvian personal code.
+     */
+    public String generateRandomUpdatedPersonalCode() {
+        return generateRandomUpdatedPersonalCode(Math.random() > 0.5);
+    }
+
+
+    /**
+     * Generates a random updated Latvian personal code.
+     *
+     * @param addDash Whether or not to add a dash between the 6th and 7th digit.
+     * @return Random updated Latvian personal code.
+     */
+    public String generateRandomUpdatedPersonalCode(boolean addDash) {
         int identifier = new Random().nextInt(1000000000);
         String personalCode = "32" + String.format("%09d", identifier);
 
-        if (Math.random() > 0.5) {
+        if (addDash) {
             personalCode = personalCode.substring(0, 6) + "-" + personalCode.substring(6);
         }
 
@@ -41,8 +61,8 @@ public final class LatvianPersonalCodeGenerator {
     }
 
     /**
-     * Generates a legacy Latvian personal code using the given gender and date of birth.
-     * The birth order number is assigned randomly.
+     * Generates a legacy Latvian personal code using the given date of birth.
+     * The birth order number is generated randomly.
      *
      * @param dateOfBirth Person's date of birth.
      * @return Legacy Latvian personal code.
@@ -53,7 +73,7 @@ public final class LatvianPersonalCodeGenerator {
     }
 
     /**
-     * Generates a legacy Latvian personal code using the given gender, date of birth and birth order number.
+     * Generates a legacy Latvian personal code using the given date of birth and birth order number.
      *
      * @param dateOfBirth      Person's date of birth.
      * @param birthOrderNumber Person's birth order number.

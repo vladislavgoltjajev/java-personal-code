@@ -29,7 +29,16 @@ class EstonianPersonalCodeGeneratorTest {
     }
 
     @Test
-    void generatePersonalCode() throws PersonalCodeException {
+    void generatePersonalCodeWithGender() {
+        for (int i = 0; i < 10000; i++) {
+            Gender gender = EstonianPersonalCodeUtils.getRandomGender();
+            String personalCode = generator.generatePersonalCode(gender);
+            assertThat(validator.isValid(personalCode)).isTrue();
+        }
+    }
+
+    @Test
+    void generatePersonalCodeWithGenderAndDateOfBirth() throws PersonalCodeException {
         for (int i = 0; i < 10000; i++) {
             Gender gender = EstonianPersonalCodeUtils.getRandomGender();
             LocalDate dateOfBirth = EstonianPersonalCodeUtils.getRandomDateOfBirth();
@@ -39,7 +48,7 @@ class EstonianPersonalCodeGeneratorTest {
     }
 
     @Test
-    void generatePersonalCodeWithBirthOrderNumber() throws PersonalCodeException {
+    void generatePersonalCodeWithGenderAndDateOfBirthAndBirthOrderNumber() throws PersonalCodeException {
         for (int i = 0; i < 10000; i++) {
             Gender gender = EstonianPersonalCodeUtils.getRandomGender();
             LocalDate dateOfBirth = EstonianPersonalCodeUtils.getRandomDateOfBirth();

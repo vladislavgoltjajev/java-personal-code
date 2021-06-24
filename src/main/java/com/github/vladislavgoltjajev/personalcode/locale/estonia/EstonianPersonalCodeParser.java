@@ -75,7 +75,7 @@ public final class EstonianPersonalCodeParser {
     }
 
     /**
-     * Returns a Period object containing the person's age.
+     * Returns the person's age.
      *
      * @param personalCode Estonian personal code.
      * @return Period object containing the person's age.
@@ -93,7 +93,7 @@ public final class EstonianPersonalCodeParser {
     }
 
     /**
-     * Returns the birth order number (digits 8-10) in the Estonian personal code.
+     * Returns the person's birth order number (digits 8-10).
      *
      * @param personalCode Estonian personal code.
      * @return Birth order number.

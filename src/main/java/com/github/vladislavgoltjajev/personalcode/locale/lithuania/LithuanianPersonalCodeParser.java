@@ -75,7 +75,7 @@ public final class LithuanianPersonalCodeParser {
     }
 
     /**
-     * Returns a Period object containing the person's age.
+     * Returns the person's age.
      *
      * @param personalCode Lithuanian personal code.
      * @return Period object containing the person's age.
@@ -93,7 +93,7 @@ public final class LithuanianPersonalCodeParser {
     }
 
     /**
-     * Returns the birth order number (digits 8-10) in the Lithuanian personal code.
+     * Returns the person's birth order number (digits 8-10).
      *
      * @param personalCode Lithuanian personal code.
      * @return Birth order number.

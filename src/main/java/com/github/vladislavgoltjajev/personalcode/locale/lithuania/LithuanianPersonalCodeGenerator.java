@@ -25,8 +25,26 @@ public final class LithuanianPersonalCodeGenerator {
     }
 
     /**
+     * Generates a Lithuanian personal code using the given gender.
+     * The date of birth and birth order number are generated randomly.
+     *
+     * @param gender Person's gender.
+     * @return Lithuanian personal code.
+     */
+    public String generatePersonalCode(Gender gender) {
+        try {
+            return generatePersonalCode(gender,
+                    LithuanianPersonalCodeUtils.getRandomDateOfBirth(),
+                    LithuanianPersonalCodeUtils.getRandomBirthOrderNumber());
+        } catch (PersonalCodeException e) {
+            // Invalid input parameters not possible, so the checked exception will never be thrown.
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
      * Generates a Lithuanian personal code using the given gender and date of birth.
-     * The birth order number is assigned randomly.
+     * The birth order number is generated randomly.
      *
      * @param gender      Person's gender.
      * @param dateOfBirth Person's date of birth.

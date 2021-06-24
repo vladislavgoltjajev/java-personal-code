@@ -28,6 +28,14 @@ class LatvianPersonalCodeGeneratorTest {
     }
 
     @Test
+    void generateRandomUpdatedPersonalCode() {
+        for (int i = 0; i < 10000; i++) {
+            String personalCode = generator.generateRandomUpdatedPersonalCode();
+            assertThat(validator.isValid(personalCode)).isTrue();
+        }
+    }
+
+    @Test
     void generateRandomLegacyPersonalCode() {
         for (int i = 0; i < 10000; i++) {
             String personalCode = generator.generateRandomLegacyPersonalCode();
