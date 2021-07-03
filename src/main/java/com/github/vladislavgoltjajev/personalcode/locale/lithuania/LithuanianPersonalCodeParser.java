@@ -1,6 +1,6 @@
 package com.github.vladislavgoltjajev.personalcode.locale.lithuania;
 
-import com.github.vladislavgoltjajev.personalcode.enums.Gender;
+import com.github.vladislavgoltjajev.personalcode.common.Gender;
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 
 import java.time.LocalDate;

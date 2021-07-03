@@ -1,6 +1,6 @@
 package com.github.vladislavgoltjajev.personalcode.locale.lithuania;
 
-import com.github.vladislavgoltjajev.personalcode.enums.Gender;
+import com.github.vladislavgoltjajev.personalcode.common.Gender;
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,7 +32,7 @@ class LithuanianPersonalCodeGeneratorTest {
     @Test
     void generatePersonalCodeWithGender() throws PersonalCodeException {
         for (int i = 0; i < 1000; i++) {
-            Gender gender = LithuanianPersonalCodeUtils.getRandomGender();
+            Gender gender = Gender.getRandomGender();
             String personalCode = generator.generatePersonalCode(gender);
             assertThat(validator.isValid(personalCode)).isTrue();
         }
@@ -41,7 +41,7 @@ class LithuanianPersonalCodeGeneratorTest {
     @Test
     void generatePersonalCodeWithGenderAndDateOfBirth() throws PersonalCodeException {
         for (int i = 0; i < 1000; i++) {
-            Gender gender = LithuanianPersonalCodeUtils.getRandomGender();
+            Gender gender = Gender.getRandomGender();
             LocalDate dateOfBirth = LithuanianPersonalCodeUtils.getRandomDateOfBirth();
             String personalCode = generator.generatePersonalCode(gender, dateOfBirth);
             assertThat(validator.isValid(personalCode)).isTrue();
@@ -51,7 +51,7 @@ class LithuanianPersonalCodeGeneratorTest {
     @Test
     void generatePersonalCodeWithGenderAndDateOfBirthAndBirthOrderNumber() throws PersonalCodeException {
         for (int i = 0; i < 1000; i++) {
-            Gender gender = LithuanianPersonalCodeUtils.getRandomGender();
+            Gender gender = Gender.getRandomGender();
             LocalDate dateOfBirth = LithuanianPersonalCodeUtils.getRandomDateOfBirth();
             int birthOrderNumber = LithuanianPersonalCodeUtils.getRandomBirthOrderNumber();
             String personalCode = generator.generatePersonalCode(gender, dateOfBirth, birthOrderNumber);

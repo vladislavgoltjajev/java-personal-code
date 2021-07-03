@@ -29,14 +29,14 @@ public class Test {
      * Example operations using an Estonian personal code.
      */
     public static void main(String[] args) {
-        // Generate personal code
+        // Generate personal code.
         EstonianPersonalCodeGenerator generator = new EstonianPersonalCodeGenerator();
         String personalCode = generator.generateRandomPersonlCode(); // 37209030023
-        // Validate personal code
+        // Validate personal code.
         EstonianPersonalCodeValidator validator = new EstonianPersonalCodeValidator();
         boolean isValidFormat = validator.isValidFormat(personalCode); // true
         boolean isValid = validator.isValid(personalCode); // true
-        // Extract data from personal code
+        // Extract data from personal code.
         EstonianPersonalCodeParser parser = new EstonianPersonalCodeParser();
         LocalDate dateOfBirth = parser.getDateOfBirth(personalCode); // 03.09.1972
         Gender gender = parser.getGender(personalCode); // MALE
@@ -50,6 +50,7 @@ public class Test {
 * [Latvia](#latvia)
 * [Lithuania](#lithuania)
 * [Luxembourg](#luxembourg)
+* [Taiwan](#taiwan)
 
 ### Estonia
 #### EstonianPersonalCodeValidator
@@ -84,12 +85,12 @@ public class Test {
     <tr>
         <td>getGender(String personalCode)</td>
         <td>Gender</td>
-        <td>Returns the person's gender.</td>
+        <td>Returns the person's gender (first digit).</td>
     </tr>
     <tr>
         <td>getDateOfBirth(String personalCode)</td>
         <td>LocalDate</td>
-        <td>Returns the person's date of birth.</td>
+        <td>Returns the person's date of birth (digits 2-7).</td>
     </tr>
     <tr>
         <td>getAge(String personalCode)</td>
@@ -198,7 +199,7 @@ public class Test {
     <tr>
         <td>getDateOfBirth(String personalCode)</td>
         <td>LocalDate</td>
-        <td>Returns the person's date of birth.</td>
+        <td>Returns the person's date of birth (digits 1-6).</td>
     </tr>
     <tr>
         <td>getAge(String personalCode)</td>
@@ -290,12 +291,12 @@ public class Test {
     <tr>
         <td>getGender(String personalCode)</td>
         <td>Gender</td>
-        <td>Returns the person's gender.</td>
+        <td>Returns the person's gender (first digit).</td>
     </tr>
     <tr>
         <td>getDateOfBirth(String personalCode)</td>
         <td>LocalDate</td>
-        <td>Returns the person's date of birth.</td>
+        <td>Returns the person's date of birth (digits 2-7).</td>
     </tr>
     <tr>
         <td>getAge(String personalCode)</td>
@@ -377,7 +378,7 @@ public class Test {
     <tr>
         <td>getDateOfBirth(String personalCode)</td>
         <td>LocalDate</td>
-        <td>Returns the person's date of birth.</td>
+        <td>Returns the person's date of birth (digits 1-8).</td>
     </tr>
     <tr>
         <td>getAge(String personalCode)</td>
@@ -407,13 +408,98 @@ public class Test {
         <td>generatePersonalCode(LocalDate dateOfBirth)</td>
         <td>String</td>
         <td>
-            Generates an Estonian personal code using the given date of birth.<br/>
+            Generates a Luxembourgish personal code using the given date of birth.<br/>
             The birth order number is generated randomly.
         </td>
     </tr>
     <tr>
         <td>generatePersonalCode(LocalDate dateOfBirth, int birthOrderNumber)</td>
         <td>String</td>
-        <td>Generates an Estonian personal code using the given date of birth and birth order number.</td>
+        <td>Generates a Luxembourgish personal code using the given date of birth and birth order number.</td>
+    </tr>
+</table>
+
+### Taiwan
+#### TaiwanesePersonalCodeValidator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>isValid(String personalCode)</td>
+        <td>boolean</td>
+        <td>Checks if the Taiwanese personal code is valid.</td>
+    </tr>
+    <tr>
+        <td>isValidFormat(String personalCode)</td>
+        <td>boolean</td>
+        <td>
+            Checks if the Taiwanese personal code conforms to the correct format.<br/>
+            Does not check the personal code's integrity.
+        </td>
+    </tr>
+</table>
+
+#### TaiwanesePersonalCodeParser
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>getHouseholdRegistrationRegion(String personalCode)</td>
+        <td>TaiwaneseRegion</td>
+        <td>Returns the person's household registration region (first letter).</td>
+    </tr>
+    <tr>
+        <td>getGender(String personalCode)</td>
+        <td>Gender</td>
+        <td>Returns the person's gender (first digit).</td>
+    </tr>
+</table>
+
+#### TaiwanesePersonalCodeGenerator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>generateRandomPersonalCode()</td>
+        <td>String</td>
+        <td>Generates a random Taiwanese personal code.</td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(TaiwaneseRegion region)</td>
+        <td>String</td>
+        <td>
+            Generates a Taiwanese personal code using the given household registration region.<br/>
+            The gender is generated randomly.
+        </td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(Gender gender)</td>
+        <td>String</td>
+        <td>
+            Generates a Taiwanese personal code using the given gender.<br/>
+            The household registration region is generated randomly.
+        </td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(TaiwaneseRegion region, Gender gender)</td>
+        <td>String</td>
+        <td>
+            Generates a Taiwanese personal code using the given household registration region and gender.<br/>
+            The household registration region is not checked for validity.
+        </td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(TaiwaneseRegion region, Gender gender, boolean checkRegionValidity)</td>
+        <td>String</td>
+        <td>Generates a Taiwanese personal code using the given household registration region and gender and checks if the given household registration region is valid.</td>
     </tr>
 </table>

@@ -79,5 +79,4 @@ class LuxembourgishPersonalCodeParserTest {
     void getBirthOrderNumber(String personalCode, int expectedBirthOrderNumber) throws PersonalCodeException {
         assertThat(parser.getBirthOrderNumber(personalCode)).isEqualTo(expectedBirthOrderNumber);
     }
-
 }

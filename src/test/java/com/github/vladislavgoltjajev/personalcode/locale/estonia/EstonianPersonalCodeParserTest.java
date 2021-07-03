@@ -1,6 +1,6 @@
 package com.github.vladislavgoltjajev.personalcode.locale.estonia;
 
-import com.github.vladislavgoltjajev.personalcode.enums.Gender;
+import com.github.vladislavgoltjajev.personalcode.common.Gender;
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;

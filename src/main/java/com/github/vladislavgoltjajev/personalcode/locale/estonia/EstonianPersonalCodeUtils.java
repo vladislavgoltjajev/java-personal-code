@@ -1,6 +1,6 @@
 package com.github.vladislavgoltjajev.personalcode.locale.estonia;
 
-import com.github.vladislavgoltjajev.personalcode.enums.Gender;
+import com.github.vladislavgoltjajev.personalcode.common.Gender;
 import com.github.vladislavgoltjajev.personalcode.utility.DateUtils;
 
 import java.time.LocalDate;
@@ -80,10 +80,6 @@ final class EstonianPersonalCodeUtils {
         }
 
         return isMale ? 5 : 6;
-    }
-
-    static Gender getRandomGender() {
-        return new Random().nextInt(2) == 0 ? Gender.MALE : Gender.FEMALE;
     }
 
     /**

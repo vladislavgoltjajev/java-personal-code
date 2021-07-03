@@ -1,6 +1,6 @@
 package com.github.vladislavgoltjajev.personalcode.locale.lithuania;
 
-import com.github.vladislavgoltjajev.personalcode.enums.Gender;
+import com.github.vladislavgoltjajev.personalcode.common.Gender;
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 import com.github.vladislavgoltjajev.personalcode.utility.DateUtils;
 
@@ -15,7 +15,7 @@ public final class LithuanianPersonalCodeGenerator {
      */
     public String generateRandomPersonalCode() {
         try {
-            return generatePersonalCode(LithuanianPersonalCodeUtils.getRandomGender(),
+            return generatePersonalCode(Gender.getRandomGender(),
                     LithuanianPersonalCodeUtils.getRandomDateOfBirth(),
                     LithuanianPersonalCodeUtils.getRandomBirthOrderNumber());
         } catch (PersonalCodeException e) {
