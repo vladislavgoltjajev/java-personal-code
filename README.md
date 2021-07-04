@@ -47,12 +47,7 @@ public class Test {
 
 ## Buy me a beer? :beer:
 Please donate if you like my work.  
-<form action="https://www.paypal.com/donate" method="post" target="_top">
-<input type="hidden" name="hosted_button_id" value="3BG7TRYQ7A89U"/>
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" name="submit" alt="Donate with PayPal button"/>
-<img alt="" src="https://www.paypal.com/en_EE/i/scr/pixel.gif" width="1" height="1"/>
-</form>
-
+**PayPal**: [![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate?hosted_button_id=3BG7TRYQ7A89U)  
 ![Monero](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/monero.png "Monero (XMR)") **XMR**: 88yGGp8NWChUxG1RvS9hRo7dUkHiSF9E3g1AE2tngCYE7pw6qHzxvBq53SVzUZEdqDT4Xc4niYSFgM1LFz6yfqUm1tKr2BW  
 ![Bitcoin](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/bitcoin.png "Bitcoin (BTC)") **BTC**: 17UKTU4vqJZLp4EMwNTSL2whxqzbWP3Ddk  
 ![Ethereum](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/ethereum.png "Ethereum (ETH)") **ETH**: 0x3b963c9c518d0278cc68bedf3be461394a227cf2  
