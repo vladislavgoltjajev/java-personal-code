@@ -54,11 +54,11 @@ Please donate if you like my work.
 ![Dogecoin](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/dogecoin.png "Dogecoin (DOGE)") **DOGE**: DB634GFugPxd4GEj8f78KeUpcD1FEfzSvZ
 
 ## API
-* [Estonia](#estonia)
-* [Latvia](#latvia)
-* [Lithuania](#lithuania)
-* [Luxembourg](#luxembourg)
-* [Taiwan](#taiwan)
+* ![EE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/EE.png) [Estonia](#estonia)
+* ![LV](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LV.png) [Latvia](#latvia)
+* ![LT](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LT.png) [Lithuania](#lithuania)
+* ![LU](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LU.png) [Luxembourg](#luxembourg)
+* ![TW](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/TW.png) [Taiwan](#taiwan)
 
 ### Estonia
 #### EstonianPersonalCodeValidator
@@ -511,3 +511,7 @@ Please donate if you like my work.
         <td>Generates a Taiwanese personal code using the given household registration region and gender and checks if the given household registration region is valid.</td>
     </tr>
 </table>
+
+## Attributions
+Cryptocurrency icons: https://github.com/ErikThiart/cryptocurrency-icons  
+Country flags: https://github.com/madebybowtie/FlagKit
