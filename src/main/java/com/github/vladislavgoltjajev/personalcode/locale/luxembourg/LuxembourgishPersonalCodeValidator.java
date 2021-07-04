@@ -27,7 +27,7 @@ public final class LuxembourgishPersonalCodeValidator {
 
     /**
      * Checks if the Luxembourgish personal code conforms to the correct format.
-     * Does not check the personal code's integrity or the validity of the embedded data.
+     * Does not check the integrity of the personal code or the validity of the embedded data.
      *
      * @param personalCode Luxembourgish personal code.
      * @return Whether or not the Luxembourgish personal code conforms to the correct format.

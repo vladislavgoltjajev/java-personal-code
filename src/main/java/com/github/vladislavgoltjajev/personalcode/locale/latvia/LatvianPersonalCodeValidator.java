@@ -46,7 +46,7 @@ public final class LatvianPersonalCodeValidator {
 
     /**
      * Checks if the specified Latvian personal code conforms to the correct legacy or updated format.
-     * Does not check the personal code's integrity or the validity of the embedded data.
+     * Does not check the integrity of the personal code or the validity of the embedded data.
      *
      * @param personalCode Latvian personal code
      * @return Whether or not the Latvian personal code conforms to the correct legacy or updated format.
@@ -57,7 +57,7 @@ public final class LatvianPersonalCodeValidator {
 
     /**
      * Checks if the updated Latvian personal code conforms to the correct format.
-     * Does not check the personal code's integrity.
+     * Does not check the integrity of the personal code.
      *
      * @param personalCode Updated Latvian personal code.
      * @return Whether or not the legacy Latvian personal code conforms to the correct format.
@@ -70,7 +70,7 @@ public final class LatvianPersonalCodeValidator {
 
     /**
      * Checks if the legacy Latvian personal code conforms to the correct format.
-     * Does not check the personal code's integrity or the validity of the embedded data.
+     * Does not check the integrity of the personal code or the validity of the embedded data.
      *
      * @param personalCode Legacy Latvian personal code.
      * @return Whether or not the legacy Latvian personal code conforms to the correct format.

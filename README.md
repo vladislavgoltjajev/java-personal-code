@@ -78,7 +78,7 @@ Please donate if you like my work.
         <td>boolean</td>
         <td>
             Checks if the Estonian personal code conforms to the correct format.<br/>
-            Does not check the personal code's integrity or the validity of the embedded data.
+            Does not check the integrity of the personal code or the validity of the embedded data.
         </td>
     </tr>
 </table>
@@ -175,7 +175,7 @@ Please donate if you like my work.
         <td>boolean</td>
         <td>
             Checks if the specified Latvian personal code conforms to the correct legacy or updated format.<br/>
-            Does not check the personal code's integrity or the validity of the embedded data.
+            Does not check the integrity of the personal code or the validity of the embedded data.
         </td>
     </tr>
     <tr>
@@ -183,7 +183,7 @@ Please donate if you like my work.
         <td>boolean</td>
         <td>
             Checks if the updated Latvian personal code conforms to the correct format.<br/>
-            Does not check the personal code's integrity.
+            Does not check the integrity of the personal code.
         </td>
     </tr>
     <tr>
@@ -191,7 +191,7 @@ Please donate if you like my work.
         <td>boolean</td>
         <td>
             Checks if the legacy Latvian personal code conforms to the correct format.<br/>
-            Does not check the personal code's integrity or the validity of the embedded data.
+            Does not check the integrity of the personal code or the validity of the embedded data.
         </td>
     </tr>
 </table>
@@ -284,7 +284,7 @@ Please donate if you like my work.
         <td>boolean</td>
         <td>
             Checks if the Lithuanian personal code conforms to the correct format.<br/>
-            Does not check the personal code's integrity or the validity of the embedded data.
+            Does not check the integrity of the personal code or the validity of the embedded data.
         </td>
     </tr>
 </table>
@@ -371,7 +371,7 @@ Please donate if you like my work.
         <td>boolean</td>
         <td>
             Checks if the Luxembourgish personal code conforms to the correct format.<br/>
-            Does not check the personal code's integrity or the validity of the embedded data.
+            Does not check the integrity of the personal code or the validity of the embedded data.
         </td>
     </tr>
 </table>
@@ -445,7 +445,7 @@ Please donate if you like my work.
         <td>boolean</td>
         <td>
             Checks if the Taiwanese personal code conforms to the correct format.<br/>
-            Does not check the personal code's integrity.
+            Does not check the integrity of the personal code.
         </td>
     </tr>
 </table>

@@ -19,7 +19,7 @@ public final class TaiwanesePersonalCodeValidator {
 
     /**
      * Checks if the Taiwanese personal code conforms to the correct format.
-     * Does not check the personal code's integrity.
+     * Does not check the integrity of the personal code.
      *
      * @param personalCode Taiwanese personal code.
      * @return Whether or not the Taiwanese personal code conforms to the correct format.

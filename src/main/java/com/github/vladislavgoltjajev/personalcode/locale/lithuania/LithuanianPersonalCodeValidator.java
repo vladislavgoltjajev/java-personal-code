@@ -27,7 +27,7 @@ public final class LithuanianPersonalCodeValidator {
 
     /**
      * Checks if the Lithuanian personal code conforms to the correct format.
-     * Does not check the personal code's integrity or the validity of the embedded data.
+     * Does not check the integrity of the personal code or the validity of the embedded data.
      *
      * @param personalCode Lithuanian personal code.
      * @return Whether or not the Lithuanian personal code conforms to the correct format.
