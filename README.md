@@ -147,7 +147,7 @@ Please donate if you like my work.
     </tr>
 </table>
 
-### Latvia
+### <a name="latvia"></a> ![LV](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LV.png) Latvia
 #### LatvianPersonalCodeValidator
 <table>
     <tr>
@@ -266,7 +266,7 @@ Please donate if you like my work.
     </tr>
 </table>
 
-### Lithuania
+### <a name="lithuania"></a> ![LT](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LT.png) Lithuania
 #### LithuanianPersonalCodeValidator
 <table>
     <tr>
@@ -353,7 +353,7 @@ Please donate if you like my work.
     </tr>
 </table>
 
-### Luxembourg
+### <a name="luxembourg"></a> ![LU](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LU.png) Luxembourg
 #### LuxembourgishPersonalCodeValidator
 <table class="table1">
     <tr>
@@ -427,7 +427,7 @@ Please donate if you like my work.
     </tr>
 </table>
 
-### Taiwan
+### <a name="taiwan"></a> ![TW](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/TW.png) Taiwan
 #### TaiwanesePersonalCodeValidator
 <table class="table1">
     <tr>
