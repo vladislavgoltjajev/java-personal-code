@@ -503,3 +503,11 @@ public class Test {
         <td>Generates a Taiwanese personal code using the given household registration region and gender and checks if the given household registration region is valid.</td>
     </tr>
 </table>
+
+## Buy me a beer? :beer:
+Please donate if you like my work.  
+**PayPal**: https://www.paypal.me/VladislavGoltjajev  
+**BTC**: 17UKTU4vqJZLp4EMwNTSL2whxqzbWP3Ddk  
+**ETH**: 0x3b963c9c518d0278cc68bedf3be461394a227cf2  
+**XMR**: 88yGGp8NWChUxG1RvS9hRo7dUkHiSF9E3g1AE2tngCYE7pw6qHzxvBq53SVzUZEdqDT4Xc4niYSFgM1LFz6yfqUm1tKr2BW  
+**DOGE**: DB634GFugPxd4GEj8f78KeUpcD1FEfzSvZ
