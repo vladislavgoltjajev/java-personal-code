@@ -5,7 +5,7 @@
 Lightweight library for working with government-issued personal identification codes.
 
 ## Import
-JDK 8 or higher is required for the library to work.
+Java 8 or higher is required for the library to work.
 ### Gradle
 ```groovy
 dependencies {
