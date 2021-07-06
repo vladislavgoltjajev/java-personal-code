@@ -3,6 +3,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.estonia;
 import com.github.vladislavgoltjajev.personalcode.common.Gender;
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 import com.github.vladislavgoltjajev.personalcode.utility.DateUtils;
+import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
 import java.time.LocalDate;
 
@@ -80,7 +81,7 @@ public final class EstonianPersonalCodeGenerator {
 
         String personalCodeWithoutChecksum = EstonianPersonalCodeUtils.getGenderIdentifier(gender, dateOfBirth)
                 + dateOfBirth.format(EstonianPersonalCodeConstants.DATE_FORMATTER).substring(2)
-                + String.format("%03d", birthOrderNumber);
+                + NumberUtils.getNumberWithLeadingZeroes(birthOrderNumber, 3);
         return personalCodeWithoutChecksum + EstonianPersonalCodeUtils.getChecksum(personalCodeWithoutChecksum);
     }
 }

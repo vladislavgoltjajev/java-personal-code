@@ -22,7 +22,7 @@ public final class LuxembourgishPersonalCodeValidator {
         }
 
         String checksum = personalCode.substring(personalCode.length() - 2);
-        return checksum.equals(LuxembourgishPersonalCodeUtils.getChecksum(personalCode));
+        return checksum.equals(LuxembourgishPersonalCodeUtils.getChecksum(personalCode.substring(0, 11)));
     }
 
     /**

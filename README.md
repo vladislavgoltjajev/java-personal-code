@@ -55,6 +55,7 @@ Please donate if you like my work.
 
 ## API
 * ![EE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/EE.png) [Estonia](#estonia)
+* ![IN](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/IN.png) [India](#india)
 * ![LV](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LV.png) [Latvia](#latvia)
 * ![LT](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LT.png) [Lithuania](#lithuania)
 * ![LU](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LU.png) [Luxembourg](#luxembourg)
@@ -144,6 +145,43 @@ Please donate if you like my work.
         <td>generatePersonalCode(Gender gender, LocalDate dateOfBirth, int birthOrderNumber)</td>
         <td>String</td>
         <td>Generates an Estonian personal code using the given gender, date of birth and birth order number.</td>
+    </tr>
+</table>
+
+### <a name="india"></a> ![IN](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/IN.png) India
+#### IndianPersonalCodeValidator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>isValid(String personalCode)</td>
+        <td>boolean</td>
+        <td>Checks if the Indian personal code is valid.</td>
+    </tr>
+    <tr>
+        <td>isValidFormat(String personalCode)</td>
+        <td>boolean</td>
+        <td>
+            Checks if the Indian personal code conforms to the correct format.<br/>
+            Does not check the integrity of the personal.
+        </td>
+    </tr>
+</table>
+
+#### IndianPersonalCodeGenerator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>generatePersonalCode()</td>
+        <td>String</td>
+        <td>Generates an Indian personal code.</td>
     </tr>
 </table>
 

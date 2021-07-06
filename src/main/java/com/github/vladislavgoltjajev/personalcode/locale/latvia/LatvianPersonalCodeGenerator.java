@@ -2,6 +2,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.latvia;
 
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 import com.github.vladislavgoltjajev.personalcode.utility.DateUtils;
+import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
 import java.time.LocalDate;
 import java.util.Random;
@@ -99,7 +100,7 @@ public final class LatvianPersonalCodeGenerator {
         String personalCodeWithoutChecksum = dateString.substring(0, 4) + dateString.substring(6)
                 + "-"
                 + LatvianPersonalCodeUtils.getCenturyIdentifier(dateOfBirth)
-                + String.format("%03d", birthOrderNumber);
+                + NumberUtils.getNumberWithLeadingZeroes(birthOrderNumber, 3);
         return personalCodeWithoutChecksum + LatvianPersonalCodeUtils.getChecksum(personalCodeWithoutChecksum);
     }
 }

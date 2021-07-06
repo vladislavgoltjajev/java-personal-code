@@ -7,13 +7,9 @@ import java.util.stream.Stream;
 
 final class TaiwanesePersonalCodeUtils {
 
-    static int getChecksum(String personalCode) {
-        try {
-            TaiwaneseRegion region = getHouseholdRegistrationRegion(personalCode);
-            personalCode = personalCode.replaceAll("^[A-Z]", String.valueOf(region.getValue()));
-        } catch (PersonalCodeException e) {
-            throw new RuntimeException(e);
-        }
+    static int getChecksum(String personalCode) throws PersonalCodeException {
+        TaiwaneseRegion region = getHouseholdRegistrationRegion(personalCode);
+        personalCode = personalCode.replaceAll("^[A-Z]", String.valueOf(region.getValue()));
 
         int[] digits = Stream.of(personalCode
                 .substring(0, 9)

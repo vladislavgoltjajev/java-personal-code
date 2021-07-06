@@ -1,5 +1,7 @@
 package com.github.vladislavgoltjajev.personalcode.locale.taiwan;
 
+import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
+
 public final class TaiwanesePersonalCodeValidator {
 
     /**
@@ -14,7 +16,12 @@ public final class TaiwanesePersonalCodeValidator {
         }
 
         int checksum = Character.getNumericValue(personalCode.charAt(personalCode.length() - 1));
-        return checksum == TaiwanesePersonalCodeUtils.getChecksum(personalCode);
+
+        try {
+            return checksum == TaiwanesePersonalCodeUtils.getChecksum(personalCode);
+        } catch (PersonalCodeException e) {
+            return false;
+        }
     }
 
     /**

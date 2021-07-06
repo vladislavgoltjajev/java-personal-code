@@ -3,6 +3,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.lithuania;
 import com.github.vladislavgoltjajev.personalcode.common.Gender;
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 import com.github.vladislavgoltjajev.personalcode.utility.DateUtils;
+import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
 import java.time.LocalDate;
 
@@ -80,7 +81,7 @@ public final class LithuanianPersonalCodeGenerator {
 
         String personalCodeWithoutChecksum = LithuanianPersonalCodeUtils.getGenderIdentifier(gender, dateOfBirth)
                 + dateOfBirth.format(LithuanianPersonalCodeConstants.DATE_FORMATTER).substring(2)
-                + String.format("%03d", birthOrderNumber);
+                + NumberUtils.getNumberWithLeadingZeroes(birthOrderNumber, 3);
         return personalCodeWithoutChecksum + LithuanianPersonalCodeUtils.getChecksum(personalCodeWithoutChecksum);
     }
 }

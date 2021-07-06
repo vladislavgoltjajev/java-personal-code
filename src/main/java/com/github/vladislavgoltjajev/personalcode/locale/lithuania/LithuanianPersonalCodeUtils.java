@@ -23,7 +23,6 @@ final class LithuanianPersonalCodeUtils {
      */
     static int getChecksum(String personalCode) {
         int[] digits = Stream.of(personalCode
-                .substring(0, 10)
                 .split(""))
                 .mapToInt(Integer::parseInt)
                 .toArray();
