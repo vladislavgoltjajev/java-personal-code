@@ -23,32 +23,6 @@ class LatvianPersonalCodeParserTest {
     }
 
     @ParameterizedTest
-    @NullSource
-    @EmptySource
-    @ValueSource(strings = {
-            "123",
-            "test",
-            "37605030291",
-            "77605030291",
-            "60319113016",
-            "99999999999",
-            "999999-99999",
-            "39912310173",
-            "39002310001",
-            "50102290005",
-            "501022900051",
-            "325-442-49548",
-            "335442-49548",
-            "315442-49548",
-            "290213-29381",
-            "180565-05611"
-    })
-    void parseInvalidPersonalCode(String personalCode) {
-        assertThatThrownBy(() -> parser.getDateOfBirth(personalCode))
-                .isInstanceOf(PersonalCodeException.class);
-    }
-
-    @ParameterizedTest
     @ValueSource(strings = {
             "32073120115",
             "32019028596",
@@ -111,5 +85,31 @@ class LatvianPersonalCodeParserTest {
     })
     void getBirthOrderNumber(String personalCode, int expectedBirthOrderNumber) throws PersonalCodeException {
         assertThat(parser.getBirthOrderNumber(personalCode)).isEqualTo(expectedBirthOrderNumber);
+    }
+
+    @ParameterizedTest
+    @NullSource
+    @EmptySource
+    @ValueSource(strings = {
+            "123",
+            "test",
+            "37605030291",
+            "77605030291",
+            "60319113016",
+            "99999999999",
+            "999999-99999",
+            "39912310173",
+            "39002310001",
+            "50102290005",
+            "501022900051",
+            "325-442-49548",
+            "335442-49548",
+            "315442-49548",
+            "290213-29381",
+            "180565-05611"
+    })
+    void parseInvalidPersonalCode(String personalCode) {
+        assertThatThrownBy(() -> parser.getDateOfBirth(personalCode))
+                .isInstanceOf(PersonalCodeException.class);
     }
 }

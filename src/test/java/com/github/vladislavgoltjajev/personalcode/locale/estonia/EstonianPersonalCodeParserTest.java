@@ -23,27 +23,6 @@ class EstonianPersonalCodeParserTest {
         parser = new EstonianPersonalCodeParser();
     }
 
-
-    @ParameterizedTest
-    @NullSource
-    @EmptySource
-    @ValueSource(strings = {
-            "123",
-            "test",
-            "37605030291",
-            "77605030291",
-            "60319113016",
-            "99999999999",
-            "39912310173",
-            "39002310001",
-            "50102290005",
-            "501022900051"
-    })
-    void parseInvalidPersonalCode(String personalCode) {
-        assertThatThrownBy(() -> parser.getGender(personalCode))
-                .isInstanceOf(PersonalCodeException.class);
-    }
-
     @ParameterizedTest
     @CsvSource({
             "17605130008,MALE",
@@ -106,5 +85,25 @@ class EstonianPersonalCodeParserTest {
     })
     void getBirthOrderNumber(String personalCode, int expectedBirthOrderNumber) throws PersonalCodeException {
         assertThat(parser.getBirthOrderNumber(personalCode)).isEqualTo(expectedBirthOrderNumber);
+    }
+
+    @ParameterizedTest
+    @NullSource
+    @EmptySource
+    @ValueSource(strings = {
+            "123",
+            "test",
+            "37605030291",
+            "77605030291",
+            "60319113016",
+            "99999999999",
+            "39912310173",
+            "39002310001",
+            "50102290005",
+            "501022900051"
+    })
+    void parseInvalidPersonalCode(String personalCode) {
+        assertThatThrownBy(() -> parser.getGender(personalCode))
+                .isInstanceOf(PersonalCodeException.class);
     }
 }

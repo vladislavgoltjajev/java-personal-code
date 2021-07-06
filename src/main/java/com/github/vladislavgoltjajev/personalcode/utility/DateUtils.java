@@ -28,6 +28,12 @@ public final class DateUtils {
         return startDate.plusDays(generatedLong);
     }
 
+    public static LocalDate getRandomDate() {
+        LocalDate startDate = LocalDate.of(1900, 1, 1);
+        LocalDate endDate = LocalDate.of(2099, 12, 31);
+        return getRandomDate(startDate, endDate);
+    }
+
     private DateUtils() {
     }
 }

@@ -23,23 +23,6 @@ class LuxembourgishPersonalCodeParserTest {
     }
 
     @ParameterizedTest
-    @NullSource
-    @EmptySource
-    @ValueSource(strings = {
-            "123",
-            "test",
-            "2087022955450",
-            "2015023007386",
-            "2001992993451",
-            "2015-060607344",
-            "20150606073441"
-    })
-    void parseInvalidPersonalCode(String personalCode) {
-        assertThatThrownBy(() -> parser.getDateOfBirth(personalCode))
-                .isInstanceOf(PersonalCodeException.class);
-    }
-
-    @ParameterizedTest
     @CsvSource({
             "2049081577690,2049-08-15",
             "2026060593451,2026-06-05",
@@ -79,5 +62,22 @@ class LuxembourgishPersonalCodeParserTest {
     })
     void getBirthOrderNumber(String personalCode, int expectedBirthOrderNumber) throws PersonalCodeException {
         assertThat(parser.getBirthOrderNumber(personalCode)).isEqualTo(expectedBirthOrderNumber);
+    }
+
+    @ParameterizedTest
+    @NullSource
+    @EmptySource
+    @ValueSource(strings = {
+            "123",
+            "test",
+            "2087022955450",
+            "2015023007386",
+            "2001992993451",
+            "2015-060607344",
+            "20150606073441"
+    })
+    void parseInvalidPersonalCode(String personalCode) {
+        assertThatThrownBy(() -> parser.getDateOfBirth(personalCode))
+                .isInstanceOf(PersonalCodeException.class);
     }
 }

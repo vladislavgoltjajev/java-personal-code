@@ -9,8 +9,8 @@ import org.junit.jupiter.params.provider.EmptySource;
 import org.junit.jupiter.params.provider.NullSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class TaiwanesePersonalCodeParserTest {
 
@@ -19,22 +19,6 @@ class TaiwanesePersonalCodeParserTest {
     @BeforeEach
     void setUp() {
         parser = new TaiwanesePersonalCodeParser();
-    }
-
-    @ParameterizedTest
-    @NullSource
-    @EmptySource
-    @ValueSource(strings = {
-            "test",
-            "123",
-            "CC209729139",
-            "I339460652",
-            "1187774969",
-            "R1721-92293"
-    })
-    void parseInvalidPersonalCode(String personalCode) {
-        assertThatThrownBy(() -> parser.getHouseholdRegistrationRegion(personalCode))
-                .isInstanceOf(PersonalCodeException.class);
     }
 
     @ParameterizedTest
@@ -67,5 +51,21 @@ class TaiwanesePersonalCodeParserTest {
     void getGender(String personalCode, Gender expectedGender) throws PersonalCodeException {
         Gender gender = parser.getGender(personalCode);
         assertThat(gender).isEqualTo(expectedGender);
+    }
+
+    @ParameterizedTest
+    @NullSource
+    @EmptySource
+    @ValueSource(strings = {
+            "test",
+            "123",
+            "CC209729139",
+            "I339460652",
+            "1187774969",
+            "R1721-92293"
+    })
+    void parseInvalidPersonalCode(String personalCode) {
+        assertThatThrownBy(() -> parser.getHouseholdRegistrationRegion(personalCode))
+                .isInstanceOf(PersonalCodeException.class);
     }
 }

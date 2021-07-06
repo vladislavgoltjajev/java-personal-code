@@ -12,4 +12,8 @@ public final class NumberUtils {
         int number = new Random().nextInt(Integer.parseInt("1" + "0".repeat(Math.max(0, length)), 10));
         return getNumberWithLeadingZeroes(number, length);
     }
+
+    public static int getRandomNumber(int lower, int upper) {
+        return new Random().nextInt(upper - lower) + lower;
+    }
 }

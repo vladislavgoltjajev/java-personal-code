@@ -60,6 +60,7 @@ Please donate if you like my work.
 * ![LT](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LT.png) [Lithuania](#lithuania)
 * ![LU](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LU.png) [Luxembourg](#luxembourg)
 * ![TW](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/TW.png) [Taiwan](#taiwan)
+* ![UE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/AE.png) [United Arab Emirates](#uae)
 
 ### <a name="estonia"></a> ![EE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/EE.png) Estonia
 #### EstonianPersonalCodeValidator
@@ -380,14 +381,14 @@ Please donate if you like my work.
         <td>generatePersonalCode(Gender gender, LocalDate dateOfBirth)</td>
         <td>String</td>
         <td>
-            Generates an Lithuanian personal code using the given gender and date of birth.<br/>
+            Generates a Lithuanian personal code using the given gender and date of birth.<br/>
             The birth order number is generated randomly.
         </td>
     </tr>
     <tr>
         <td>generatePersonalCode(Gender gender, LocalDate dateOfBirth, int birthOrderNumber)</td>
         <td>String</td>
-        <td>Generates an Lithuanian personal code using the given gender, date of birth and birth order number.</td>
+        <td>Generates a Lithuanian personal code using the given gender, date of birth and birth order number.</td>
     </tr>
 </table>
 
@@ -547,6 +548,67 @@ Please donate if you like my work.
         <td>generatePersonalCode(TaiwaneseRegion region, Gender gender, boolean checkRegionValidity)</td>
         <td>String</td>
         <td>Generates a Taiwanese personal code using the given household registration region and gender and checks if the given household registration region is valid.</td>
+    </tr>
+</table>
+
+### <a name="uae"></a> ![AE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/AE.png) United Arab Emirates
+#### EmiratiPersonalCodeValidator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>isValid(String personalCode)</td>
+        <td>boolean</td>
+        <td>Checks if the Emirati personal code is valid.</td>
+    </tr>
+    <tr>
+        <td>isValidFormat(String personalCode)</td>
+        <td>boolean</td>
+        <td>
+            Checks if the Emirati personal code conforms to the correct format.<br/>
+            Does not check the integrity of the personal code.
+        </td>
+    </tr>
+</table>
+
+#### EmiratiPersonalCodeParser
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>getBirthYear(String personalCode)</td>
+        <td>int</td>
+        <td>Returns the person's birth year (digits 4-7).</td>
+    </tr>
+</table>
+
+#### EmiratiPersonalCodeGenerator
+<table class="table1">
+    <tr>
+        <th>Method</th>
+        <th>Return type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>generateRandomPersonalCode()</td>
+        <td>String</td>
+        <td>Generates a random Emirati personal code.</td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(LocalDate dateOfBirth)</td>
+        <td>String</td>
+        <td>Generates an Emirati personal code using the given date of birth.</td>
+    </tr>
+    <tr>
+        <td>generatePersonalCode(int birthYear)</td>
+        <td>String</td>
+        <td>Generates an Emirati personal code using the given birth year.</td>
     </tr>
 </table>
 
