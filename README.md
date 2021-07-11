@@ -81,7 +81,7 @@ DOGE**: DB634GFugPxd4GEj8f78KeUpcD1FEfzSvZ
 
 `GYYMMDDXXXC`:
 
-* `G` - gender and birth century indicator
+* `G` - gender and birth century indicator (1, 3, 5 - male; 2, 4, 6 - female)
 * `YYMMDD` - date of birth
 * `XXX` - birth order number
 * `C` - checksum
@@ -237,7 +237,7 @@ Example: 323691-93794.
 `YYMMDD-BXXXC` (legacy format):
 
 * `YYMMDD` - date of birth
-* `B` - birth century indicator
+* `B` - birth century indicator (0 - 19th, 1 - 20th, 2 - 21st)
 * `XXX` - birth order number
 * `C` - checksum
 
@@ -470,7 +470,7 @@ Example: 50109130003.
 
 * `YYYYMMDD` - date of birth
 * `XXX` - birth order number
-* `CC` - Checksum (Luhn and Verhoeff algorithms)
+* `CC` - checksum (Luhn and Verhoeff algorithms)
 
 Example: 1944051267737.
 
