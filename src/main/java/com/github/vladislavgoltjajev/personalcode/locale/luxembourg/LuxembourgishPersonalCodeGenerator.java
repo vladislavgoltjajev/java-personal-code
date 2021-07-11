@@ -1,6 +1,7 @@
 package com.github.vladislavgoltjajev.personalcode.locale.luxembourg;
 
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
+import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
 import java.time.LocalDate;
 
@@ -52,7 +53,7 @@ public final class LuxembourgishPersonalCodeGenerator {
         }
 
         String personalCodeWithoutChecksum = dateOfBirth.format(LuxembourgishPersonalCodeConstants.DATE_FORMATTER)
-                + String.format("%03d", birthOrderNumber);
+                + NumberUtils.getNumberWithLeadingZeroes(birthOrderNumber, 3);
         return personalCodeWithoutChecksum + LuxembourgishPersonalCodeUtils.getChecksum(personalCodeWithoutChecksum);
     }
 }

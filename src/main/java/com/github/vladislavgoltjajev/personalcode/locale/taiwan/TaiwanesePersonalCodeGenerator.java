@@ -2,8 +2,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.taiwan;
 
 import com.github.vladislavgoltjajev.personalcode.common.Gender;
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
-
-import java.util.Random;
+import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
 public final class TaiwanesePersonalCodeGenerator {
 
@@ -82,10 +81,9 @@ public final class TaiwanesePersonalCodeGenerator {
             throw new PersonalCodeException("Gender must be specified");
         }
 
-        int identifier = new Random().nextInt(10000000);
         String personalCodeWithoutChecksum = region.getCode()
                 + TaiwanesePersonalCodeUtils.getGenderIdentifier(gender)
-                + String.format("%07d", identifier);
+                + NumberUtils.getRandomNumberWithLeadingZeroes(7);
         return personalCodeWithoutChecksum + TaiwanesePersonalCodeUtils.getChecksum(personalCodeWithoutChecksum);
     }
 }

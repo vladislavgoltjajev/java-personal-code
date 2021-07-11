@@ -1,19 +1,26 @@
 # Java Personal Code
+
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.vladislavgoltjajev/java-personal-code)](https://mvnrepository.com/artifact/com.github.vladislavgoltjajev/java-personal-code)
 [![License](https://img.shields.io/github/license/vladislavgoltjajev/java-personal-code)](https://github.com/vladislavgoltjajev/java-personal-code/blob/main/LICENSE)
 
 Lightweight library for working with government-issued personal identification codes.
 
 ## Import
+
 Java 8 or higher is required for the library to work.
+
 ### Gradle
+
 ```groovy
 dependencies {
     implementation 'com.github.vladislavgoltjajev:java-personal-code:X.X'
 }
 ```
+
 ### Maven
+
 ```xml
+
 <dependency>
     <groupId>com.github.vladislavgoltjajev</groupId>
     <artifactId>java-personal-code</artifactId>
@@ -22,6 +29,7 @@ dependencies {
 ```
 
 ## Usage
+
 ```java
 public class Test {
 
@@ -46,14 +54,21 @@ public class Test {
 ```
 
 ## Buy me a beer? :beer:
+
 Please donate if you like my work.  
-**PayPal**: [![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate?hosted_button_id=3BG7TRYQ7A89U)  
-![Monero](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/monero.png "Monero (XMR)") **XMR**: 88yGGp8NWChUxG1RvS9hRo7dUkHiSF9E3g1AE2tngCYE7pw6qHzxvBq53SVzUZEdqDT4Xc4niYSFgM1LFz6yfqUm1tKr2BW  
-![Bitcoin](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/bitcoin.png "Bitcoin (BTC)") **BTC**: 17UKTU4vqJZLp4EMwNTSL2whxqzbWP3Ddk  
-![Ethereum](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/ethereum.png "Ethereum (ETH)") **ETH**: 0x3b963c9c518d0278cc68bedf3be461394a227cf2  
-![Dogecoin](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/dogecoin.png "Dogecoin (DOGE)") **DOGE**: DB634GFugPxd4GEj8f78KeUpcD1FEfzSvZ
+**
+PayPal**: [![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate?hosted_button_id=3BG7TRYQ7A89U)  
+![Monero](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/monero.png "Monero (XMR)") **
+XMR**: 88yGGp8NWChUxG1RvS9hRo7dUkHiSF9E3g1AE2tngCYE7pw6qHzxvBq53SVzUZEdqDT4Xc4niYSFgM1LFz6yfqUm1tKr2BW  
+![Bitcoin](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/bitcoin.png "Bitcoin (BTC)") **
+BTC**: 17UKTU4vqJZLp4EMwNTSL2whxqzbWP3Ddk  
+![Ethereum](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/ethereum.png "Ethereum (ETH)") **
+ETH**: 0x3b963c9c518d0278cc68bedf3be461394a227cf2  
+![Dogecoin](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/dogecoin.png "Dogecoin (DOGE)") **
+DOGE**: DB634GFugPxd4GEj8f78KeUpcD1FEfzSvZ
 
 ## API
+
 * ![EE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/EE.png) [Estonia](#estonia)
 * ![IN](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/IN.png) [India](#india)
 * ![LV](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LV.png) [Latvia](#latvia)
@@ -63,7 +78,18 @@ Please donate if you like my work.
 * ![UE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/AE.png) [United Arab Emirates](#uae)
 
 ### <a name="estonia"></a> ![EE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/EE.png) Estonia
+
+`GYYMMDDXXXC`:
+
+* `G` - gender and birth century indicator
+* `YYMMDD` - date of birth
+* `XXX` - birth order number
+* `C` - checksum
+
+Example: 47508030046.
+
 #### EstonianPersonalCodeValidator
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -86,6 +112,7 @@ Please donate if you like my work.
 </table>
 
 #### EstonianPersonalCodeParser
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -115,6 +142,7 @@ Please donate if you like my work.
 </table>
 
 #### EstonianPersonalCodeGenerator
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -150,7 +178,16 @@ Please donate if you like my work.
 </table>
 
 ### <a name="india"></a> ![IN](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/IN.png) India
+
+`XXXX-XXXX-XXXC`:
+
+* `XXXX-XXXX-XXX` - random numbers
+* `C` - checksum (Verhoeff algorithm)
+
+Example: 9185-8655-0944.
+
 #### IndianPersonalCodeValidator
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -173,6 +210,7 @@ Please donate if you like my work.
 </table>
 
 #### IndianPersonalCodeGenerator
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -187,7 +225,26 @@ Please donate if you like my work.
 </table>
 
 ### <a name="latvia"></a> ![LV](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LV.png) Latvia
+
+`32XXXX-XXXXC` (updated format since 01.07.2017):
+
+* `32` - updated format indicator
+* `XXXX-XXXX` - random numbers
+* `C` - checksum
+
+Example: 323691-93794.
+
+`YYMMDD-BXXXC` (legacy format):
+
+* `YYMMDD` - date of birth
+* `B` - birth century indicator
+* `XXX` - birth order number
+* `C` - checksum
+
+Example: 290156-11605.
+
 #### LatvianPersonalCodeValidator
+
 <table>
     <tr>
         <th>Method</th>
@@ -236,6 +293,7 @@ Please donate if you like my work.
 </table>
 
 #### LatvianPersonalCodeParser
+
 :exclamation: Only works with legacy Latvian personal codes.
 <table class="table1">
     <tr>
@@ -261,6 +319,7 @@ Please donate if you like my work.
 </table>
 
 #### LatvianPersonalCodeGenerator
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -306,7 +365,18 @@ Please donate if you like my work.
 </table>
 
 ### <a name="lithuania"></a> ![LT](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LT.png) Lithuania
+
+`GYYMMDDXXXC`:
+
+* `G` - gender and birth century indicator (1, 3, 5 - male; 2, 4, 6 - female)
+* `YYMMDD` - date of birth
+* `XXX` - birth order number
+* `C` - checksum
+
+Example: 50109130003.
+
 #### LithuanianPersonalCodeValidator
+
 <table>
     <tr>
         <th>Method</th>
@@ -329,6 +399,7 @@ Please donate if you like my work.
 </table>
 
 #### LithuanianPersonalCodeParser
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -358,6 +429,7 @@ Please donate if you like my work.
 </table>
 
 #### LithuanianPersonalCodeGenerator
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -393,7 +465,17 @@ Please donate if you like my work.
 </table>
 
 ### <a name="luxembourg"></a> ![LU](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LU.png) Luxembourg
+
+`YYYYMMDDXXXCC`:
+
+* `YYYYMMDD` - date of birth
+* `XXX` - birth order number
+* `CC` - Checksum (Luhn and Verhoeff algorithms)
+
+Example: 1944051267737.
+
 #### LuxembourgishPersonalCodeValidator
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -416,6 +498,7 @@ Please donate if you like my work.
 </table>
 
 #### LuxembourgishPersonalCodeParser
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -440,6 +523,7 @@ Please donate if you like my work.
 </table>
 
 #### LuxembourgishPersonalCodeGenerator
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -467,7 +551,18 @@ Please donate if you like my work.
 </table>
 
 ### <a name="taiwan"></a> ![TW](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/TW.png) Taiwan
+
+`RGXXXXXXXC`:
+
+* `R` - household registration region (A-Z)
+* `G` - gender indicator (1 - male, 2 - female)
+* `XXXXXXX` - random number
+* `C` - checksum
+
+Example: R172192293.
+
 #### TaiwanesePersonalCodeValidator
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -490,6 +585,7 @@ Please donate if you like my work.
 </table>
 
 #### TaiwanesePersonalCodeParser
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -509,6 +605,7 @@ Please donate if you like my work.
 </table>
 
 #### TaiwanesePersonalCodeGenerator
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -552,7 +649,18 @@ Please donate if you like my work.
 </table>
 
 ### <a name="uae"></a> ![AE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/AE.png) United Arab Emirates
+
+`784-YYYY-XXXXXXX-C`:
+
+* `784` - ISO 3166-1 numeric code for the UAE
+* `YYYY` - year of birth
+* `XXXXXXX` - random number
+* `C` - checksum
+
+Example: 784-1935-0284231-8.
+
 #### EmiratiPersonalCodeValidator
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -575,6 +683,7 @@ Please donate if you like my work.
 </table>
 
 #### EmiratiPersonalCodeParser
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -589,6 +698,7 @@ Please donate if you like my work.
 </table>
 
 #### EmiratiPersonalCodeGenerator
+
 <table class="table1">
     <tr>
         <th>Method</th>
@@ -613,5 +723,6 @@ Please donate if you like my work.
 </table>
 
 ## Attributions
+
 Cryptocurrency icons: https://github.com/ErikThiart/cryptocurrency-icons  
 Country flags: https://github.com/madebybowtie/FlagKit

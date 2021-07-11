@@ -1,11 +1,11 @@
 package com.github.vladislavgoltjajev.personalcode.locale.latvia;
 
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
+import com.github.vladislavgoltjajev.personalcode.utility.BooleanUtils;
 import com.github.vladislavgoltjajev.personalcode.utility.DateUtils;
 import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
 import java.time.LocalDate;
-import java.util.Random;
 
 public final class LatvianPersonalCodeGenerator {
 
@@ -15,7 +15,7 @@ public final class LatvianPersonalCodeGenerator {
      * @return Random Latvian personal code.
      */
     public String generateRandomPersonalCode() {
-        return Math.random() > 0.5 ? generateRandomUpdatedPersonalCode() : generateRandomLegacyPersonalCode();
+        return BooleanUtils.get50PercentChance() ? generateRandomUpdatedPersonalCode() : generateRandomLegacyPersonalCode();
     }
 
     /**
@@ -25,7 +25,7 @@ public final class LatvianPersonalCodeGenerator {
      * @return Random updated Latvian personal code.
      */
     public String generateRandomUpdatedPersonalCode() {
-        return generateRandomUpdatedPersonalCode(Math.random() > 0.5);
+        return generateRandomUpdatedPersonalCode(BooleanUtils.get50PercentChance());
     }
 
     /**
@@ -35,8 +35,7 @@ public final class LatvianPersonalCodeGenerator {
      * @return Random updated Latvian personal code.
      */
     public String generateRandomUpdatedPersonalCode(boolean addDash) {
-        int identifier = new Random().nextInt(100000000);
-        String personalCodeWithoutChecksum = "32" + String.format("%08d", identifier);
+        String personalCodeWithoutChecksum = "32" + NumberUtils.getRandomNumberWithLeadingZeroes(8);
         String personalCode = personalCodeWithoutChecksum + LatvianPersonalCodeUtils.getChecksum(personalCodeWithoutChecksum);
 
         if (addDash) {
