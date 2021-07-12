@@ -655,7 +655,7 @@ Example: R172192293.
 * `784` - ISO 3166-1 numeric code for the UAE
 * `YYYY` - year of birth
 * `XXXXXXX` - random number
-* `C` - checksum
+* `C` - checksum (Luhn algorithm)
 
 Example: 784-1935-0284231-8.
 
