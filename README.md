@@ -79,7 +79,7 @@ Please donate if you like my work.
 
 ### <a name="estonia"></a> ![EE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/EE.png) Estonia
 
-`GYYMMDDXXXC`:
+`GYYMMDDXXXC`
 
 * `G` - gender and birth century indicator (1, 3, 5 - male; 2, 4, 6 - female)
 * `YYMMDD` - date of birth
@@ -179,7 +179,7 @@ Example: 47508030046.
 
 ### <a name="india"></a> ![IN](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/IN.png) India
 
-`XXXX-XXXX-XXXC`:
+`XXXX-XXXX-XXXC`
 
 * `XXXX-XXXX-XXX` - random numbers
 * `C` - checksum (Verhoeff algorithm)
@@ -226,7 +226,7 @@ Example: 9185-8655-0944.
 
 ### <a name="latvia"></a> ![LV](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LV.png) Latvia
 
-`32XXXX-XXXXC` (updated format since 01.07.2017):
+`32XXXX-XXXXC` (updated format since 01.07.2017)
 
 * `32` - updated format indicator
 * `XXXX-XXXX` - random numbers
@@ -234,7 +234,7 @@ Example: 9185-8655-0944.
 
 Example: 323691-93794.
 
-`YYMMDD-BXXXC` (legacy format):
+`YYMMDD-BXXXC` (legacy format)
 
 * `YYMMDD` - date of birth
 * `B` - birth century indicator (0 - 19th, 1 - 20th, 2 - 21st)
@@ -366,7 +366,7 @@ Example: 290156-11605.
 
 ### <a name="lithuania"></a> ![LT](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LT.png) Lithuania
 
-`GYYMMDDXXXC`:
+`GYYMMDDXXXC`
 
 * `G` - gender and birth century indicator (1, 3, 5 - male; 2, 4, 6 - female)
 * `YYMMDD` - date of birth
@@ -466,7 +466,7 @@ Example: 50109130003.
 
 ### <a name="luxembourg"></a> ![LU](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LU.png) Luxembourg
 
-`YYYYMMDDXXXCC`:
+`YYYYMMDDXXXCC`
 
 * `YYYYMMDD` - date of birth
 * `XXX` - birth order number
@@ -552,7 +552,7 @@ Example: 1944051267737.
 
 ### <a name="taiwan"></a> ![TW](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/TW.png) Taiwan
 
-`RGXXXXXXXC`:
+`RGXXXXXXXC`
 
 * `R` - household registration region (A-Z)
 * `G` - gender indicator (1 - male, 2 - female)
@@ -650,7 +650,7 @@ Example: R172192293.
 
 ### <a name="uae"></a> ![AE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/AE.png) United Arab Emirates
 
-`784-YYYY-XXXXXXX-C`:
+`784-YYYY-XXXXXXX-C`
 
 * `784` - ISO 3166-1 numeric code for the UAE
 * `YYYY` - year of birth
