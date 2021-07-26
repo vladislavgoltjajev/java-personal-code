@@ -5,7 +5,7 @@ import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
 import java.time.LocalDate;
 
-public final class LuxembourgishPersonalCodeGenerator {
+public class LuxembourgishPersonalCodeGenerator {
 
     /**
      * Generates a random Luxembourgish personal code.

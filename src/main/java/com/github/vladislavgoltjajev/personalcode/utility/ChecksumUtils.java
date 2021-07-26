@@ -2,7 +2,7 @@ package com.github.vladislavgoltjajev.personalcode.utility;
 
 import java.util.stream.Stream;
 
-public final class ChecksumUtils {
+public class ChecksumUtils {
 
     public static int getLuhnChecksum(String personalCode) {
         int[] digits = getDigitArray(personalCode);

@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeParseException;
 
-public final class LuxembourgishPersonalCodeParser {
+public class LuxembourgishPersonalCodeParser {
 
     /**
      * Returns the person's date of birth.

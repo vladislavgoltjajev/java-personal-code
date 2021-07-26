@@ -7,7 +7,7 @@ import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
 import java.time.LocalDate;
 
-public final class EstonianPersonalCodeGenerator {
+public class EstonianPersonalCodeGenerator {
 
     /**
      * Generates a random Estonian personal code.

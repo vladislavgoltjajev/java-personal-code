@@ -3,7 +3,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.india;
 import com.github.vladislavgoltjajev.personalcode.utility.ChecksumUtils;
 import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
-public final class IndianPersonalCodeGenerator {
+public class IndianPersonalCodeGenerator {
 
     /**
      * Generates an Indian personal code.

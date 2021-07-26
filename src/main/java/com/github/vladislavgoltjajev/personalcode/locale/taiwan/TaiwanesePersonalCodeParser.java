@@ -3,7 +3,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.taiwan;
 import com.github.vladislavgoltjajev.personalcode.common.Gender;
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 
-public final class TaiwanesePersonalCodeParser {
+public class TaiwanesePersonalCodeParser {
 
     /**
      * Returns the person's household registration region (first letter).

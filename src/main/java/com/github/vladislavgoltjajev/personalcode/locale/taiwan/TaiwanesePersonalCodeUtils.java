@@ -5,7 +5,7 @@ import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeExceptio
 
 import java.util.stream.Stream;
 
-final class TaiwanesePersonalCodeUtils {
+class TaiwanesePersonalCodeUtils {
 
     static int getChecksum(String personalCode) throws PersonalCodeException {
         TaiwaneseRegion region = getHouseholdRegistrationRegion(personalCode);

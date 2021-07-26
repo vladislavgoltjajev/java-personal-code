@@ -2,7 +2,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.lithuania;
 
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 
-public final class LithuanianPersonalCodeValidator {
+public class LithuanianPersonalCodeValidator {
 
     /**
      * Checks if the Lithuanian personal code is valid.

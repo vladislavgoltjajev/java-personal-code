@@ -5,7 +5,7 @@ import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.time.format.ResolverStyle;
 
-public final class LuxembourgishPersonalCodeConstants {
+public class LuxembourgishPersonalCodeConstants {
 
     /**
      * Does not account for leap years (29th of February).

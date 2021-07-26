@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Random;
 import java.util.stream.Stream;
 
-final class LithuanianPersonalCodeUtils {
+class LithuanianPersonalCodeUtils {
 
     /**
      * Calculates the Lithuanian personal code checksum.

@@ -2,7 +2,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.luxembourg;
 
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 
-public final class LuxembourgishPersonalCodeValidator {
+public class LuxembourgishPersonalCodeValidator {
 
     /**
      * Checks if the Luxembourgish personal code is valid.

@@ -6,7 +6,7 @@ import com.github.vladislavgoltjajev.personalcode.utility.DateUtils;
 import java.time.LocalDate;
 import java.util.Random;
 
-final class LuxembourgishPersonalCodeUtils {
+class LuxembourgishPersonalCodeUtils {
 
     /**
      * Calculates the Luxembourgish personal code checksum.

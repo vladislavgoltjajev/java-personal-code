@@ -2,7 +2,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.taiwan;
 
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 
-public final class TaiwanesePersonalCodeValidator {
+public class TaiwanesePersonalCodeValidator {
 
     /**
      * Checks if the Taiwanese personal code is valid.

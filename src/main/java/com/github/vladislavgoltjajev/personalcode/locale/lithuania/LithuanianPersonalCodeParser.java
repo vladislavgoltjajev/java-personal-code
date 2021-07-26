@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeParseException;
 
-public final class LithuanianPersonalCodeParser {
+public class LithuanianPersonalCodeParser {
 
     /**
      * Returns the person's gender.

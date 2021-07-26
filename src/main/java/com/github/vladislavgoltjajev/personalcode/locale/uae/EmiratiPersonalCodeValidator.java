@@ -2,7 +2,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.uae;
 
 import com.github.vladislavgoltjajev.personalcode.utility.ChecksumUtils;
 
-public final class EmiratiPersonalCodeValidator {
+public class EmiratiPersonalCodeValidator {
 
     /**
      * Checks if the Emirati personal code is valid.

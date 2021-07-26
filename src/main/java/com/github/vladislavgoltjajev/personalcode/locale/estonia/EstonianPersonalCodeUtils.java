@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Random;
 import java.util.stream.Stream;
 
-final class EstonianPersonalCodeUtils {
+class EstonianPersonalCodeUtils {
 
     /**
      * Calculates the Estonian personal code checksum.

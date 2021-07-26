@@ -1,6 +1,6 @@
 package com.github.vladislavgoltjajev.personalcode.common;
 
-import java.util.Random;
+import com.github.vladislavgoltjajev.personalcode.utility.BooleanUtils;
 
 public enum Gender {
 
@@ -8,6 +8,6 @@ public enum Gender {
     FEMALE;
 
     public static Gender getRandomGender() {
-        return Gender.values()[new Random().nextInt(Gender.values().length)];
+        return BooleanUtils.get50PercentChance() ? MALE : FEMALE;
     }
 }

@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.Random;
 import java.util.stream.Stream;
 
-final class LatvianPersonalCodeUtils {
+class LatvianPersonalCodeUtils {
 
     /**
      * Calculates the Latvian personal code checksum.

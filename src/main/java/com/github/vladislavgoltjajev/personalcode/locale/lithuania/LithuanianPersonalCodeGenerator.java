@@ -7,7 +7,7 @@ import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
 import java.time.LocalDate;
 
-public final class LithuanianPersonalCodeGenerator {
+public class LithuanianPersonalCodeGenerator {
 
     /**
      * Generates a random Lithuanian personal code.

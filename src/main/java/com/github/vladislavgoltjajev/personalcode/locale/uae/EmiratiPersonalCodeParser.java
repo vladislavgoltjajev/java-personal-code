@@ -2,7 +2,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.uae;
 
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 
-public final class EmiratiPersonalCodeParser {
+public class EmiratiPersonalCodeParser {
 
     /**
      * Returns the person's birth year (digits 4-7).

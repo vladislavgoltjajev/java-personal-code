@@ -2,7 +2,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.india;
 
 import com.github.vladislavgoltjajev.personalcode.utility.ChecksumUtils;
 
-public final class IndianPersonalCodeValidator {
+public class IndianPersonalCodeValidator {
 
     /**
      * Checks if the Indian personal code is valid.

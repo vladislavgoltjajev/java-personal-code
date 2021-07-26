@@ -4,7 +4,7 @@ import com.github.vladislavgoltjajev.personalcode.common.Gender;
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
-public final class TaiwanesePersonalCodeGenerator {
+public class TaiwanesePersonalCodeGenerator {
 
     /**
      * Generates a random Taiwanese personal code.

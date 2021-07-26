@@ -6,7 +6,7 @@ import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
 import java.time.LocalDate;
 
-public final class EmiratiPersonalCodeGenerator {
+public class EmiratiPersonalCodeGenerator {
 
     /**
      * Generates a random Emirati personal code.
@@ -15,7 +15,7 @@ public final class EmiratiPersonalCodeGenerator {
      */
     public String generateRandomPersonalCode() {
         try {
-            return generatePersonalCode(NumberUtils.getRandomNumber(1900, 2099));
+            return generatePersonalCode(EmiratiPersonalCodeUtils.getRandomYearOfBirth());
         } catch (PersonalCodeException e) {
             // Invalid input parameters not possible, so the checked exception will never be thrown.
             throw new RuntimeException(e);

@@ -2,7 +2,7 @@ package com.github.vladislavgoltjajev.personalcode.locale.latvia;
 
 import com.github.vladislavgoltjajev.personalcode.exception.PersonalCodeException;
 
-public final class LatvianPersonalCodeValidator {
+public class LatvianPersonalCodeValidator {
 
     /**
      * Checks if the Latvian personal code (both legacy and updated) is valid.

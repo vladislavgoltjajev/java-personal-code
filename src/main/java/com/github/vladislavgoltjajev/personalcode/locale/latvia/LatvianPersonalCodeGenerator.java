@@ -7,7 +7,7 @@ import com.github.vladislavgoltjajev.personalcode.utility.NumberUtils;
 
 import java.time.LocalDate;
 
-public final class LatvianPersonalCodeGenerator {
+public class LatvianPersonalCodeGenerator {
 
     /**
      * Generates a random Latvian personal code.
