@@ -204,7 +204,7 @@ Example: 9185-8655-0944.
         <td>boolean</td>
         <td>
             Checks if the Indian personal code conforms to the correct format.<br/>
-            Does not check the integrity of the personal.
+            Does not check the integrity of the personal code.
         </td>
     </tr>
 </table>
