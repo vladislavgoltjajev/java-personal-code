@@ -53,20 +53,6 @@ public class Test {
 }
 ```
 
-## Buy me a beer? :beer:
-
-Please donate if you like my work.  
-**PayPal**:
-[![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate?hosted_button_id=3BG7TRYQ7A89U)  
-![Monero](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/monero.png "Monero (XMR)")
-**XMR**: 88yGGp8NWChUxG1RvS9hRo7dUkHiSF9E3g1AE2tngCYE7pw6qHzxvBq53SVzUZEdqDT4Xc4niYSFgM1LFz6yfqUm1tKr2BW  
-![Bitcoin](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/bitcoin.png "Bitcoin (BTC)")
-**BTC**: 17UKTU4vqJZLp4EMwNTSL2whxqzbWP3Ddk  
-![Ethereum](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/ethereum.png "Ethereum (ETH)")
-**ETH**: 0x3b963c9c518d0278cc68bedf3be461394a227cf2  
-![Dogecoin](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/dogecoin.png "Dogecoin (DOGE)")
-**DOGE**: DB634GFugPxd4GEj8f78KeUpcD1FEfzSvZ
-
 ## API
 
 * ![EE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/EE.png) [Estonia](#estonia)
@@ -74,7 +60,6 @@ Please donate if you like my work.
 * ![LV](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LV.png) [Latvia](#latvia)
 * ![LT](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LT.png) [Lithuania](#lithuania)
 * ![LU](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LU.png) [Luxembourg](#luxembourg)
-* ![TW](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/TW.png) [Taiwan](#taiwan)
 * ![UE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/AE.png) [United Arab Emirates](#uae)
 
 ### <a name="estonia"></a> ![EE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/EE.png) Estonia
@@ -547,104 +532,6 @@ Example: 1944051267737.
         <td>generatePersonalCode(LocalDate dateOfBirth, int birthOrderNumber)</td>
         <td>String</td>
         <td>Generates a Luxembourgish personal code using the given date of birth and birth order number.</td>
-    </tr>
-</table>
-
-### <a name="taiwan"></a> ![TW](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/TW.png) Taiwan
-
-`RGXXXXXXXC`
-
-* `R` - household registration region (A-Z)
-* `G` - gender indicator (1 - male, 2 - female)
-* `XXXXXXX` - random number
-* `C` - checksum
-
-Example: R172192293.
-
-#### TaiwanesePersonalCodeValidator
-
-<table class="table1">
-    <tr>
-        <th>Method</th>
-        <th>Return type</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>isValid(String personalCode)</td>
-        <td>boolean</td>
-        <td>Checks if the Taiwanese personal code is valid.</td>
-    </tr>
-    <tr>
-        <td>isValidFormat(String personalCode)</td>
-        <td>boolean</td>
-        <td>
-            Checks if the Taiwanese personal code conforms to the correct format.<br/>
-            Does not check the integrity of the personal code.
-        </td>
-    </tr>
-</table>
-
-#### TaiwanesePersonalCodeParser
-
-<table class="table1">
-    <tr>
-        <th>Method</th>
-        <th>Return type</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>getHouseholdRegistrationRegion(String personalCode)</td>
-        <td>TaiwaneseRegion</td>
-        <td>Returns the person's household registration region (first letter).</td>
-    </tr>
-    <tr>
-        <td>getGender(String personalCode)</td>
-        <td>Gender</td>
-        <td>Returns the person's gender (first digit).</td>
-    </tr>
-</table>
-
-#### TaiwanesePersonalCodeGenerator
-
-<table class="table1">
-    <tr>
-        <th>Method</th>
-        <th>Return type</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>generateRandomPersonalCode()</td>
-        <td>String</td>
-        <td>Generates a random Taiwanese personal code.</td>
-    </tr>
-    <tr>
-        <td>generatePersonalCode(TaiwaneseRegion region)</td>
-        <td>String</td>
-        <td>
-            Generates a Taiwanese personal code using the given household registration region.<br/>
-            The gender is generated randomly.
-        </td>
-    </tr>
-    <tr>
-        <td>generatePersonalCode(Gender gender)</td>
-        <td>String</td>
-        <td>
-            Generates a Taiwanese personal code using the given gender.<br/>
-            The household registration region is generated randomly.
-        </td>
-    </tr>
-    <tr>
-        <td>generatePersonalCode(TaiwaneseRegion region, Gender gender)</td>
-        <td>String</td>
-        <td>
-            Generates a Taiwanese personal code using the given household registration region and gender.<br/>
-            The household registration region is not checked for validity.
-        </td>
-    </tr>
-    <tr>
-        <td>generatePersonalCode(TaiwaneseRegion region, Gender gender, boolean checkRegionValidity)</td>
-        <td>String</td>
-        <td>Generates a Taiwanese personal code using the given household registration region and gender and checks if the given household registration region is valid.</td>
     </tr>
 </table>
 
