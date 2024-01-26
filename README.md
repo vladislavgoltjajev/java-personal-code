@@ -53,31 +53,17 @@ public class Test {
 }
 ```
 
-## Buy me a beer? :beer:
-
-Please donate if you like my work.  
-**PayPal**:
-[![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate?hosted_button_id=3BG7TRYQ7A89U)  
-![Monero](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/monero.png "Monero (XMR)")
-**XMR**: 88yGGp8NWChUxG1RvS9hRo7dUkHiSF9E3g1AE2tngCYE7pw6qHzxvBq53SVzUZEdqDT4Xc4niYSFgM1LFz6yfqUm1tKr2BW  
-![Bitcoin](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/bitcoin.png "Bitcoin (BTC)")
-**BTC**: 17UKTU4vqJZLp4EMwNTSL2whxqzbWP3Ddk  
-![Ethereum](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/ethereum.png "Ethereum (ETH)")
-**ETH**: 0x3b963c9c518d0278cc68bedf3be461394a227cf2  
-![Dogecoin](https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/dogecoin.png "Dogecoin (DOGE)")
-**DOGE**: DB634GFugPxd4GEj8f78KeUpcD1FEfzSvZ
-
 ## API
 
-* ![EE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/EE.png) [Estonia](#estonia)
-* ![IN](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/IN.png) [India](#india)
-* ![LV](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LV.png) [Latvia](#latvia)
-* ![LT](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LT.png) [Lithuania](#lithuania)
-* ![LU](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LU.png) [Luxembourg](#luxembourg)
-* ![TW](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/TW.png) [Taiwan](#taiwan)
-* ![UE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/AE.png) [United Arab Emirates](#uae)
+* [Estonia](#estonia)
+* [India](#india)
+* [Latvia](#latvia)
+* [Lithuania](#lithuania)
+* [Luxembourg](#luxembourg)
+* [Taiwan](#taiwan)
+* [United Arab Emirates](#uae)
 
-### <a name="estonia"></a> ![EE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/EE.png) Estonia
+### <a name="estonia"></a> Estonia
 
 `GYYMMDDXXXC`
 
@@ -177,7 +163,7 @@ Example: 47508030046.
     </tr>
 </table>
 
-### <a name="india"></a> ![IN](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/IN.png) India
+### <a name="india"></a> India
 
 `XXXX-XXXX-XXXC`
 
@@ -224,7 +210,7 @@ Example: 9185-8655-0944.
     </tr>
 </table>
 
-### <a name="latvia"></a> ![LV](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LV.png) Latvia
+### <a name="latvia"></a> Latvia
 
 `32XXXX-XXXXC` (updated format since 01.07.2017)
 
@@ -364,7 +350,7 @@ Example: 290156-11605.
     </tr>
 </table>
 
-### <a name="lithuania"></a> ![LT](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LT.png) Lithuania
+### <a name="lithuania"></a> Lithuania
 
 `GYYMMDDXXXC`
 
@@ -464,7 +450,7 @@ Example: 50109130003.
     </tr>
 </table>
 
-### <a name="luxembourg"></a> ![LU](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/LU.png) Luxembourg
+### <a name="luxembourg"></a> Luxembourg
 
 `YYYYMMDDXXXCC`
 
@@ -550,7 +536,7 @@ Example: 1944051267737.
     </tr>
 </table>
 
-### <a name="taiwan"></a> ![TW](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/TW.png) Taiwan
+### <a name="taiwan"></a> Taiwan
 
 `RGXXXXXXXC`
 
@@ -648,7 +634,7 @@ Example: R172192293.
     </tr>
 </table>
 
-### <a name="uae"></a> ![AE](https://github.com/madebybowtie/FlagKit/raw/master/Assets/PNG/AE.png) United Arab Emirates
+### <a name="uae"></a> United Arab Emirates
 
 `784-YYYY-XXXXXXX-C`
 
@@ -721,8 +707,3 @@ Example: 784-1935-0284231-8.
         <td>Generates an Emirati personal code using the given birth year.</td>
     </tr>
 </table>
-
-## Attributions
-
-Cryptocurrency icons: https://github.com/ErikThiart/cryptocurrency-icons  
-Country flags: https://github.com/madebybowtie/FlagKit
